@@ -8,11 +8,12 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-//@Configuration
+@Configuration
 public class MybatisPlusConfig {
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource.hikari")
     public DataSource dataSource() {
         DataSource dataSource = new HikariDataSource();
-
         return dataSource;
     }
 }
