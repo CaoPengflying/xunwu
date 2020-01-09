@@ -131,7 +131,12 @@
     <!--开发环境:打印控制台-->
     <springProfile name="dev">
         <!-- 日志输出级别 -->
-        <root level="DEBUG">
+        <!-- SQL相关日志输出-->
+        <logger name="org.apache.ibatis" level="DEBUG" additivity="TRUE" />
+        <logger name="org.mybatis.spring" level="DEBUG" additivity="TRUE" />
+        <logger name="com.github.miemiedev.mybatis.paginator" level="DEBUG" additivity="TRUE" />
+
+        <root level="info">
             <appender-ref ref="STDOUT" />
             <appender-ref ref="ALL" />
             <appender-ref ref="DEBUG" />
