@@ -11,7 +11,7 @@ public class HouseTest extends XunwuApplicationTests {
     private HouseService houseService;
     @Test
     public void testGetById(){
-        House byId = houseService.getById(1);
+        House byId = houseService.getById(15);
         System.out.println(byId);
     }
 }
