@@ -42,6 +42,8 @@ public class GenerateUtil {
                 "id",
                 "User", "com.cpf.xunwu.entity",
                 "D:/JavaProject/xunwu/src/main/java/com\\cpf\\xunwu\\entity/");
+        GenerateMapper.generate("User","D:/JavaProject/xunwu/src/main/java/com\\cpf\\xunwu\\mapper/");
+        GenerateService.generate("User","D:/JavaProject/xunwu/src/main/java/com\\cpf\\xunwu\\service/");
 
     }
 
