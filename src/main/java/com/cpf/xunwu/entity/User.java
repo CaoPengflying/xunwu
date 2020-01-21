@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@TableName(value = "`user")
+@TableName(value = "user")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,52 +17,52 @@ import java.util.Date;
 @ToString
 public class User implements Serializable {
 	/**
-	 * ç”¨æˆ·å”¯ä¸€id
+	 * ÓÃ»§Î¨Ò»id
 	 */
 	@TableId(value = "id", type = IdType.AUTO)
 	private Integer id;
 	/**
-	 * ç”¨æˆ·å
+	 * ÓÃ»§Ãû
 	 */
 	@TableField("name")
 	private String name;
 	/**
-	 * ç”µå­é‚®ç®±
+	 * µç×ÓÓÊÏä
 	 */
 	@TableField("email")
 	private String email;
 	/**
-	 * ç”µè¯å·ç 
+	 * µç»°ºÅÂë
 	 */
 	@TableField("phone_number")
 	private String phoneNumber;
 	/**
-	 * å¯†ç 
+	 * ÃÜÂë
 	 */
 	@TableField("password")
 	private String password;
 	/**
-	 * ç”¨æˆ·çŠ¶æ€0-æ­£å¸¸1-å°ç¦
+	 * ÓÃ»§×´Ì¬0-Õı³£1-·â½û
 	 */
 	@TableField("status")
 	private Integer status;
 	/**
-	 * ç”¨æˆ·è´¦å·åˆ›å»ºæ—¶é—´
+	 * ÓÃ»§ÕËºÅ´´½¨Ê±¼ä
 	 */
 	@TableField("create_time")
 	private Date createTime;
 	/**
-	 * ä¸Šæ¬¡ç™»å½•æ—¶é—´
+	 * ÉÏ´ÎµÇÂ¼Ê±¼ä
 	 */
 	@TableField("last_login_time")
 	private Date lastLoginTime;
 	/**
-	 * ä¸Šæ¬¡æ›´æ–°è®°å½•æ—¶é—´
+	 * ÉÏ´Î¸üĞÂ¼ÇÂ¼Ê±¼ä
 	 */
 	@TableField("last_update_time")
 	private Date lastUpdateTime;
 	/**
-	 * å¤´åƒ
+	 * Í·Ïñ
 	 */
 	@TableField("avatar")
 	private String avatar;

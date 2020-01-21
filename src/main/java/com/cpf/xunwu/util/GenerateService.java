@@ -22,19 +22,19 @@ public class GenerateService {
         serviceImplContent.append("package com.cpf.xunwu.service.impl;").append("\r\n").append("\r\n");
 
         serviceImplContent.append("import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;\n");
-        serviceImplContent.append("import com.cpf.xunwu.mapper.HouseDetailMapper;\r\n");
-        serviceImplContent.append("import com.cpf.xunwu.service.HouseDetailService;\r\n");
+        serviceImplContent.append("import com.cpf.xunwu.mapper.").append(entityName).append("Mapper;\r\n");
+        serviceImplContent.append("import com.cpf.xunwu.entity.").append(entityName).append(";\r\n");
+        serviceImplContent.append("import com.cpf.xunwu.service.").append(entityName).append("Service;\r\n");
         serviceImplContent.append("import org.springframework.stereotype.Service;\r\n");
-        serviceImplContent.append("import org.springframework.stereotype.Service;\r\n\n");
-        serviceImplContent.append("@Service");
+        serviceImplContent.append("@Service").append("\r\n");
         serviceImplContent.append("public class ").append(entityName).append("ServiceImpl").append(" extends ServiceImpl<")
-                .append(entityName).append("Mapper,").append(entityName).append(">")
-                .append("implements ").append(entityName).append("Service ").append(" {");
+                .append(entityName).append("Mapper, ").append(entityName).append(">")
+                .append(" implements ").append(entityName).append("Service ").append(" {");
         serviceImplContent.append("\r\n");
         serviceImplContent.append("}\r\n");
         fw = new FileWriter(entityPath +"impl/"+ entityName + "ServiceImpl.java");
         pw = new PrintWriter(fw);
-        pw.println(entityContent);
+        pw.println(serviceImplContent);
         pw.flush();
     }
 }
