@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
+    <!-- 引用其它文件的设置 <property file="res/log_config.properties" /> -->
+    <property name="ROOT" value="logs/xunwu/" />
+    <property name="FILESIZE" value="100MB" />
+    <property name="MAXHISTORY" value="15" />
+    <timestamp key="DATETIME" datePattern="yyyy-MM-dd HH:mm:ss" />
     <!-- appender(输出端) 此处是控制台输出，用的是ConsoleAppender,STDOUT，此名字随意起，和root下的一致就行 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
