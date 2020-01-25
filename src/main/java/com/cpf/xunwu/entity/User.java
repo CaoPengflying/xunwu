@@ -5,9 +5,15 @@ import lombok.*;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.beans.Transient;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @TableName(value = "user")
 @Getter
@@ -15,57 +21,88 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class User implements Serializable {
-	/**
-	 * ÓÃ»§Î¨Ò»id
-	 */
-	@TableId(value = "id", type = IdType.AUTO)
-	private Integer id;
-	/**
-	 * ÓÃ»§Ãû
-	 */
-	@TableField("name")
-	private String name;
-	/**
-	 * µç×ÓÓÊÏä
-	 */
-	@TableField("email")
-	private String email;
-	/**
-	 * µç»°ºÅÂë
-	 */
-	@TableField("phone_number")
-	private String phoneNumber;
-	/**
-	 * ÃÜÂë
-	 */
-	@TableField("password")
-	private String password;
-	/**
-	 * ÓÃ»§×´Ì¬0-Õı³£1-·â½û
-	 */
-	@TableField("status")
-	private Integer status;
-	/**
-	 * ÓÃ»§ÕËºÅ´´½¨Ê±¼ä
-	 */
-	@TableField("create_time")
-	private Date createTime;
-	/**
-	 * ÉÏ´ÎµÇÂ¼Ê±¼ä
-	 */
-	@TableField("last_login_time")
-	private Date lastLoginTime;
-	/**
-	 * ÉÏ´Î¸üĞÂ¼ÇÂ¼Ê±¼ä
-	 */
-	@TableField("last_update_time")
-	private Date lastUpdateTime;
-	/**
-	 * Í·Ïñ
-	 */
-	@TableField("avatar")
-	private String avatar;
+public class User implements Serializable,UserDetails {
+    /**
+     * ç”¨æˆ·å”¯ä¸€id
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+    /**
+     * ç”¨æˆ·å
+     */
+    @TableField("name")
+    private String name;
+    /**
+     * ç”µå­é‚®ç®±
+     */
+    @TableField("email")
+    private String email;
+    /**
+     * ç”µè¯å·ç 
+     */
+    @TableField("phone_number")
+    private String phoneNumber;
+    /**
+     * å¯†ç 
+     */
+    @TableField("password")
+    private String password;
+    /**
+     * ç”¨æˆ·çŠ¶æ€0-æ­£å¸¸1-å°ç¦
+     */
+    @TableField("status")
+    private Integer status;
+    /**
+     * ç”¨æˆ·è´¦å·åˆ›å»ºæ—¶é—´
+     */
+    @TableField("create_time")
+    private Date createTime;
+    /**
+     * ä¸Šæ¬¡ç™»å½•æ—¶é—´
+     */
+    @TableField("last_login_time")
+    private Date lastLoginTime;
+    /**
+     * ä¸Šæ¬¡æ›´æ–°è®°å½•æ—¶é—´
+     */
+    @TableField("last_update_time")
+    private Date lastUpdateTime;
+    /**
+     * å¤´åƒ
+     */
+    @TableField("avatar")
+    private String avatar;
+    @TableField(exist = false)
+    private List<GrantedAuthority> authorityList;
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorityList;
+    }
+
+    @Override
+    public String getUsername() {
+        return name;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }
 

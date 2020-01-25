@@ -1,0 +1,387 @@
+[2020-01-26 00:00:44.249]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:00:49.061]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 13640 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:00:49.065]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:00:49.157]  INFO  org.springframework.boot.devtools.restart.ChangeableUrls logTo  225 - The Class-Path manifest attribute in C:\Users\littleFairy\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\2.3.2\5528bc882ea499a09d720b42af11785c4fc6be2a\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/txw2-2.3.2.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/istack-commons-runtime-3.0.8.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/stax-ex-1.8.1.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/FastInfoset-1.2.16.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.activation-api-1.2.1.jar
+[2020-01-26 00:00:49.159]  INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor logTo  225 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2020-01-26 00:00:49.159]  INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor logTo  225 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2020-01-26 00:00:50.294]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:00:50.302]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:00:50.303]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:00:50.303]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:00:50.440]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:00:50.441]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 1282 ms
+[2020-01-26 00:00:50.524]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:00:51.457]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19f84bdd, org.springframework.security.web.context.SecurityContextPersistenceFilter@4942474f, org.springframework.security.web.header.HeaderWriterFilter@4112abde, org.springframework.security.web.authentication.logout.LogoutFilter@1d64572b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@b125d45, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75c98587, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53b8e02f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f7bff7f, org.springframework.security.web.session.SessionManagementFilter@cf3a311, org.springframework.security.web.access.ExceptionTranslationFilter@2eb1841a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@47f55e9f]
+[2020-01-26 00:00:51.539]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:00:51.592]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:00:51.758]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:00:51.781]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:00:51.799]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:00:51.802]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 3.121 seconds (JVM running for 4.769)
+[2020-01-26 00:01:00.172]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-01-26 00:01:00.172]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  525 - Initializing Servlet 'dispatcherServlet'
+[2020-01-26 00:01:00.177]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  547 - Completed initialization in 5 ms
+[2020-01-26 00:02:53.138]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:02:53.500]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 13640 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:02:53.500]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:02:53.976]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:02:53.977]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:02:53.978]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:02:53.978]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:02:54.021]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:02:54.022]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 519 ms
+[2020-01-26 00:02:54.494]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:02:54.508]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:02:54.551]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ade9e2a, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c2f63f4, org.springframework.security.web.header.HeaderWriterFilter@4519e97d, org.springframework.security.web.csrf.CsrfFilter@3d59f63f, org.springframework.security.web.authentication.logout.LogoutFilter@196b18b6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6e64b0ae, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6e692c41, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@27670ee, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@42c16069, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5606f5fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cdebc47, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64097393, org.springframework.security.web.session.SessionManagementFilter@1e358603, org.springframework.security.web.access.ExceptionTranslationFilter@22530812, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3442d41e]
+[2020-01-26 00:02:54.642]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:02:54.655]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:02:54.657]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:02:54.657]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.197 seconds (JVM running for 127.623)
+[2020-01-26 00:02:54.660]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  58 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebSecurityEnablerConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) found bean 'org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$DefaultConfigurerAdapter'; @ConditionalOnBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+[2020-01-26 00:04:42.109]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:04:48.849]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:04:48.853]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:04:48.903]  INFO  org.springframework.boot.devtools.restart.ChangeableUrls logTo  225 - The Class-Path manifest attribute in C:\Users\littleFairy\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\2.3.2\5528bc882ea499a09d720b42af11785c4fc6be2a\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/txw2-2.3.2.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/istack-commons-runtime-3.0.8.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/stax-ex-1.8.1.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/FastInfoset-1.2.16.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.activation-api-1.2.1.jar
+[2020-01-26 00:04:48.904]  INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor logTo  225 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2020-01-26 00:04:48.904]  INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor logTo  225 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2020-01-26 00:04:50.238]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:04:50.249]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:04:50.249]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:04:50.250]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:04:50.402]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:04:50.403]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 1499 ms
+[2020-01-26 00:04:50.466]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:04:51.473]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60fb67f4, org.springframework.security.web.context.SecurityContextPersistenceFilter@5014755c, org.springframework.security.web.header.HeaderWriterFilter@37482abe, org.springframework.security.web.authentication.logout.LogoutFilter@4ebb8bd0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@103ec21a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@310c96f2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b21b2cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1aa06f46, org.springframework.security.web.session.SessionManagementFilter@ce3328d, org.springframework.security.web.access.ExceptionTranslationFilter@2354690b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11563f63]
+[2020-01-26 00:04:51.598]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:04:51.656]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:04:51.836]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:04:51.861]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:04:51.880]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:04:51.883]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 3.556 seconds (JVM running for 5.275)
+[2020-01-26 00:04:53.482]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:04:54.198]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:04:54.199]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:04:55.234]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:04:55.234]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:04:55.234]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:04:55.236]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:04:55.325]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:04:55.326]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 1112 ms
+[2020-01-26 00:04:55.360]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:04:56.291]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f3c5b2c, org.springframework.security.web.context.SecurityContextPersistenceFilter@469a4cf, org.springframework.security.web.header.HeaderWriterFilter@34ae8b98, org.springframework.security.web.authentication.logout.LogoutFilter@73dc484, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@73733625, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37781629, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77cab915, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@147588a9, org.springframework.security.web.session.SessionManagementFilter@3f00c90d, org.springframework.security.web.access.ExceptionTranslationFilter@1de5d8eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@584cf760]
+[2020-01-26 00:04:56.365]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:04:56.395]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:04:56.699]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:04:56.730]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:04:56.736]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:04:56.737]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 2.609 seconds (JVM running for 10.128)
+[2020-01-26 00:04:56.740]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:04:56.988]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-01-26 00:04:56.992]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  525 - Initializing Servlet 'dispatcherServlet'
+[2020-01-26 00:04:57.011]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  547 - Completed initialization in 19 ms
+[2020-01-26 00:05:08.870]  INFO  com.zaxxer.hikari.HikariDataSource getConnection  110 - HikariPool-1 - Starting...
+[2020-01-26 00:05:09.418]  INFO  com.zaxxer.hikari.HikariDataSource getConnection  123 - HikariPool-1 - Start completed.
+[2020-01-26 00:06:32.619]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:06:32.619]  INFO  com.zaxxer.hikari.HikariDataSource close  350 - HikariPool-1 - Shutdown initiated...
+[2020-01-26 00:06:32.625]  INFO  com.zaxxer.hikari.HikariDataSource close  352 - HikariPool-1 - Shutdown completed.
+[2020-01-26 00:06:33.006]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:06:33.006]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:06:33.480]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:06:33.481]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:06:33.481]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:06:33.481]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:06:33.527]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:06:33.528]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 518 ms
+[2020-01-26 00:06:33.544]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:06:33.924]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42c67b26, org.springframework.security.web.context.SecurityContextPersistenceFilter@1fc9108a, org.springframework.security.web.header.HeaderWriterFilter@49bec8de, org.springframework.security.web.authentication.logout.LogoutFilter@2cf853d7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@79e5678c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c1b0af9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@135cdf9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47cb95fd, org.springframework.security.web.session.SessionManagementFilter@69003acc, org.springframework.security.web.access.ExceptionTranslationFilter@426e8f2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@28de538c]
+[2020-01-26 00:06:33.958]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:06:33.969]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:06:34.073]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:06:34.084]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:06:34.087]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:06:34.087]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.121 seconds (JVM running for 107.479)
+[2020-01-26 00:06:34.089]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:06:45.904]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:06:46.364]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:06:46.364]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:06:46.967]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:06:46.967]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:06:46.967]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:06:46.967]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:06:47.013]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:06:47.013]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 646 ms
+[2020-01-26 00:06:47.032]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:06:47.493]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@201851c0, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f157369, org.springframework.security.web.header.HeaderWriterFilter@7b0dc30e, org.springframework.security.web.authentication.logout.LogoutFilter@4c82233e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4c0f6416, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ca3373, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11ca9557, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58af487c, org.springframework.security.web.session.SessionManagementFilter@51130100, org.springframework.security.web.access.ExceptionTranslationFilter@683a6bcb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2a200f92]
+[2020-01-26 00:06:47.530]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:06:47.542]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:06:47.653]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:06:47.666]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:06:47.668]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:06:47.669]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.342 seconds (JVM running for 121.06)
+[2020-01-26 00:06:47.671]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:06:50.454]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:06:50.810]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:06:50.810]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:06:51.268]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:06:51.269]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:06:51.269]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:06:51.269]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:06:51.339]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:06:51.340]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 527 ms
+[2020-01-26 00:06:51.355]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:06:51.994]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38ec8e9f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d8c6838, org.springframework.security.web.header.HeaderWriterFilter@55dd5e2, org.springframework.security.web.authentication.logout.LogoutFilter@6c8492dd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6e3284d5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6dc7e74e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6deddd1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57c9ba04, org.springframework.security.web.session.SessionManagementFilter@f5375d4, org.springframework.security.web.access.ExceptionTranslationFilter@71803770, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@213c1553]
+[2020-01-26 00:06:52.026]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:06:52.043]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:06:52.299]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:06:52.340]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:06:52.346]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:06:52.347]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.571 seconds (JVM running for 125.738)
+[2020-01-26 00:06:52.351]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:07:13.243]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:07:13.668]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:07:13.669]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:07:14.159]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:07:14.160]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:07:14.160]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:07:14.160]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:07:14.212]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:07:14.213]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 542 ms
+[2020-01-26 00:07:14.230]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:07:14.633]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32c71ca8, org.springframework.security.web.context.SecurityContextPersistenceFilter@49367dc0, org.springframework.security.web.header.HeaderWriterFilter@3de14fea, org.springframework.security.web.authentication.logout.LogoutFilter@4aa88ce0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@201e5a20, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e3a3056, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6913aa64, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32bf5df9, org.springframework.security.web.session.SessionManagementFilter@4b025842, org.springframework.security.web.access.ExceptionTranslationFilter@12a0a76f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54418759]
+[2020-01-26 00:07:14.666]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:07:14.678]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:07:14.786]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:07:14.799]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:07:14.800]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:07:14.801]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.167 seconds (JVM running for 148.192)
+[2020-01-26 00:07:14.802]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:07:36.951]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:07:37.792]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:07:37.793]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:07:39.017]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:07:39.018]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:07:39.019]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:07:39.019]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:07:39.160]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:07:39.161]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 1363 ms
+[2020-01-26 00:07:39.197]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:07:40.115]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4986b065, org.springframework.security.web.context.SecurityContextPersistenceFilter@7df9f6af, org.springframework.security.web.header.HeaderWriterFilter@3f7e1c89, org.springframework.security.web.authentication.logout.LogoutFilter@115fd7d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38bbb4b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3889073c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77dccef0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a345fed, org.springframework.security.web.session.SessionManagementFilter@70268aa0, org.springframework.security.web.access.ExceptionTranslationFilter@12aaf3e7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@62a1d222]
+[2020-01-26 00:07:40.198]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:07:40.226]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:07:40.502]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:07:40.530]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:07:40.535]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:07:40.536]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 2.83 seconds (JVM running for 173.927)
+[2020-01-26 00:07:40.538]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:08:48.170]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:08:48.598]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:08:48.598]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:08:49.044]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:08:49.045]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:08:49.045]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:08:49.045]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:08:49.122]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:08:49.122]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 522 ms
+[2020-01-26 00:08:49.138]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:08:49.538]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@101b8705, org.springframework.security.web.context.SecurityContextPersistenceFilter@76c98f2a, org.springframework.security.web.header.HeaderWriterFilter@244cdbde, org.springframework.security.web.authentication.logout.LogoutFilter@74bef45f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@26f39d53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e9373b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c43d793, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6eda6bac, org.springframework.security.web.session.SessionManagementFilter@20b845b2, org.springframework.security.web.access.ExceptionTranslationFilter@348598e7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5b405092]
+[2020-01-26 00:08:49.625]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:08:49.671]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:08:49.800]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:08:49.812]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:08:49.814]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:08:49.815]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.253 seconds (JVM running for 243.206)
+[2020-01-26 00:08:49.817]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:09:27.767]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:09:28.208]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:09:28.208]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:09:28.684]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:09:28.685]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:09:28.685]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:09:28.685]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:09:28.753]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:09:28.753]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 543 ms
+[2020-01-26 00:09:28.768]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:09:29.199]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@53bb37b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@344d9f6c, org.springframework.security.web.header.HeaderWriterFilter@2c9bd874, org.springframework.security.web.authentication.logout.LogoutFilter@2e6d4ac0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59a7c2bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9428f2d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7be8ae09, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a1ac2fd, org.springframework.security.web.session.SessionManagementFilter@3477223d, org.springframework.security.web.access.ExceptionTranslationFilter@171544ec, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@154203cd]
+[2020-01-26 00:09:29.251]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:09:29.263]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:09:29.366]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:09:29.378]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:09:29.380]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:09:29.380]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.204 seconds (JVM running for 282.771)
+[2020-01-26 00:09:29.381]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:09:40.087]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:09:40.785]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:09:40.785]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:09:41.849]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:09:41.850]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:09:41.850]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:09:41.850]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:09:41.976]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:09:41.977]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 1186 ms
+[2020-01-26 00:09:42.007]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:09:42.423]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8f94176, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e0dd8b4, org.springframework.security.web.header.HeaderWriterFilter@177501a9, org.springframework.security.web.authentication.logout.LogoutFilter@4237ce66, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@40c7e65c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@342bf01d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@becc778, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65cbe406, org.springframework.security.web.session.SessionManagementFilter@485a201a, org.springframework.security.web.access.ExceptionTranslationFilter@10f34bfb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@520d005f]
+[2020-01-26 00:09:42.457]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:09:42.469]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:09:42.635]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:09:42.655]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:09:42.658]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:09:42.658]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.954 seconds (JVM running for 296.05)
+[2020-01-26 00:09:42.660]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:09:51.196]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:09:51.650]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:09:51.650]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:09:52.112]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:09:52.113]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:09:52.113]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:09:52.113]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:09:52.159]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:09:52.160]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 508 ms
+[2020-01-26 00:09:52.174]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:09:52.581]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@313e8516, org.springframework.security.web.context.SecurityContextPersistenceFilter@1413e0ac, org.springframework.security.web.header.HeaderWriterFilter@37cb7e4e, org.springframework.security.web.authentication.logout.LogoutFilter@4fd0a3a9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@178a5dc4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@294ca636, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4519945f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@602191e7, org.springframework.security.web.session.SessionManagementFilter@ff1c494, org.springframework.security.web.access.ExceptionTranslationFilter@23d3d63e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3eb6343b]
+[2020-01-26 00:09:52.620]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:09:52.633]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:09:52.743]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:09:52.755]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:09:52.758]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:09:52.758]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.143 seconds (JVM running for 306.149)
+[2020-01-26 00:09:52.759]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:10:32.255]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:10:32.637]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:10:32.638]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:10:33.280]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:10:33.281]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:10:33.281]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:10:33.281]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:10:33.347]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:10:33.347]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 707 ms
+[2020-01-26 00:10:34.045]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:10:34.074]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:10:34.174]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b4ebe3d, org.springframework.security.web.context.SecurityContextPersistenceFilter@3a52daab, org.springframework.security.web.header.HeaderWriterFilter@1223f568, org.springframework.security.web.csrf.CsrfFilter@35d8d2a3, org.springframework.security.web.authentication.logout.LogoutFilter@22eb4102, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43932ab1, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5e5feda2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@69d16e60, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4ffc991, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@783aa61c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75bf94c6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f5eccd, org.springframework.security.web.session.SessionManagementFilter@496c44ef, org.springframework.security.web.access.ExceptionTranslationFilter@5ba3213c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@276b6f9b]
+[2020-01-26 00:10:34.405]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:10:34.425]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:10:34.429]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:10:34.430]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 1.825 seconds (JVM running for 347.82)
+[2020-01-26 00:10:34.437]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  58 - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebSecurityEnablerConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) found bean 'org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$DefaultConfigurerAdapter'; @ConditionalOnBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+[2020-01-26 00:10:39.925]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:10:40.628]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 9984 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:10:40.629]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:10:41.754]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:10:41.755]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:10:41.755]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:10:41.755]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:10:41.899]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:10:41.899]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 1264 ms
+[2020-01-26 00:10:42.909]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:10:42.940]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:10:43.033]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32df325a, org.springframework.security.web.context.SecurityContextPersistenceFilter@73c917d9, org.springframework.security.web.header.HeaderWriterFilter@680b04f7, org.springframework.security.web.csrf.CsrfFilter@7350493f, org.springframework.security.web.authentication.logout.LogoutFilter@4861fa3f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4ccbf380, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@70a3f4e8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4ea6bed7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@347b030d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f699c94, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7f751532, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5de21370, org.springframework.security.web.session.SessionManagementFilter@221bf13, org.springframework.security.web.access.ExceptionTranslationFilter@1395e13d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63f4759]
+[2020-01-26 00:10:43.195]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:10:43.224]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:10:43.229]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:10:43.230]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 2.683 seconds (JVM running for 356.622)
+[2020-01-26 00:10:43.233]  INFO  o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener onApplicationEvent  63 - Condition evaluation unchanged
+[2020-01-26 00:11:12.191]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-01-26 00:11:12.194]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  525 - Initializing Servlet 'dispatcherServlet'
+[2020-01-26 00:11:12.197]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  547 - Completed initialization in 3 ms
+[2020-01-26 00:11:21.243]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:11:26.134]  INFO  com.cpf.xunwu.XunwuApplication logStarting  55 - Starting XunwuApplication on LAPTOP-JAR91L5C with PID 7264 (E:\IdeaWorkSpace\xunwu\build\classes\java\main started by littleFairy in E:\IdeaWorkSpace\xunwu)
+[2020-01-26 00:11:26.142]  INFO  com.cpf.xunwu.XunwuApplication logStartupProfileInfo  655 - The following profiles are active: dev
+[2020-01-26 00:11:26.209]  INFO  org.springframework.boot.devtools.restart.ChangeableUrls logTo  225 - The Class-Path manifest attribute in C:\Users\littleFairy\.gradle\caches\modules-2\files-2.1\org.glassfish.jaxb\jaxb-runtime\2.3.2\5528bc882ea499a09d720b42af11785c4fc6be2a\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/txw2-2.3.2.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/istack-commons-runtime-3.0.8.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/stax-ex-1.8.1.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/FastInfoset-1.2.16.jar,file:/C:/Users/littleFairy/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jakarta.activation-api-1.2.1.jar
+[2020-01-26 00:11:26.209]  INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor logTo  225 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2020-01-26 00:11:26.209]  INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor logTo  225 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2020-01-26 00:11:27.393]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer initialize  92 - Tomcat initialized with port(s): 12000 (http)
+[2020-01-26 00:11:27.401]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Initializing ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:11:27.402]  INFO  org.apache.catalina.core.StandardService log  173 - Starting service [Tomcat]
+[2020-01-26 00:11:27.402]  INFO  org.apache.catalina.core.StandardEngine log  173 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+[2020-01-26 00:11:27.532]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring embedded WebApplicationContext
+[2020-01-26 00:11:27.533]  INFO  org.springframework.web.context.ContextLoader prepareWebApplicationContext  284 - Root WebApplicationContext: initialization completed in 1323 ms
+[2020-01-26 00:11:27.618]  INFO  o.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor lambda$buildAutowiringMetadata$2  502 - Autowired annotation should only be used on methods with parameters: public org.springframework.security.crypto.password.PasswordEncoder com.cpf.xunwu.config.WebSecurityConfig.passwordEncoder()
+[2020-01-26 00:11:28.584]  INFO  org.springframework.security.web.DefaultSecurityFilterChain <init>  43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c017fc7, org.springframework.security.web.context.SecurityContextPersistenceFilter@428c861a, org.springframework.security.web.header.HeaderWriterFilter@78c6c6e0, org.springframework.security.web.authentication.logout.LogoutFilter@4d41e2e3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@566b22fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4044b89f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@285d1834, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55239a27, org.springframework.security.web.session.SessionManagementFilter@3341adda, org.springframework.security.web.access.ExceptionTranslationFilter@2a209374, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5847db25]
+[2020-01-26 00:11:28.675]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor initialize  171 - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-01-26 00:11:28.729]  INFO  org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping <init>  58 - Adding welcome page template: index
+[2020-01-26 00:11:28.908]  INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer startServer  58 - LiveReload server is running on port 35729
+[2020-01-26 00:11:28.934]  INFO  org.apache.coyote.http11.Http11NioProtocol log  173 - Starting ProtocolHandler ["http-nio-12000"]
+[2020-01-26 00:11:28.951]  INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer start  204 - Tomcat started on port(s): 12000 (http) with context path ''
+[2020-01-26 00:11:28.954]  INFO  com.cpf.xunwu.XunwuApplication logStarted  61 - Started XunwuApplication in 3.185 seconds (JVM running for 4.412)
+[2020-01-26 00:11:35.679]  INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] log  173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-01-26 00:11:35.680]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  525 - Initializing Servlet 'dispatcherServlet'
+[2020-01-26 00:11:35.684]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  547 - Completed initialization in 4 ms
+[2020-01-26 00:11:45.304]  INFO  com.zaxxer.hikari.HikariDataSource getConnection  110 - HikariPool-1 - Starting...
+[2020-01-26 00:11:45.837]  INFO  com.zaxxer.hikari.HikariDataSource getConnection  123 - HikariPool-1 - Start completed.

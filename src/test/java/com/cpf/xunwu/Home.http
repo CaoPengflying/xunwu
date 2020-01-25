@@ -1,0 +1,4 @@
+## 获取活动列表
+GET {{baseUrl}}/xxxxx
+
+###

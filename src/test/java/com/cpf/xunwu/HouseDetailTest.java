@@ -1,9 +1,7 @@
 package com.cpf.xunwu;
 
-import com.cpf.xunwu.entity.House;
 import com.cpf.xunwu.entity.HouseDetail;
 import com.cpf.xunwu.service.HouseDetailService;
-import com.cpf.xunwu.service.HouseService;
 import org.junit.Test;
 
 import javax.annotation.Resource;

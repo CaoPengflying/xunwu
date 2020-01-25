@@ -1,7 +1,7 @@
 package com.cpf.xunwu.controller;
 
-import base.ErrorConstant;
-import base.Result;
+import com.cpf.xunwu.base.ErrorConstant;
+import com.cpf.xunwu.base.Result;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +13,26 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
     @GetMapping("/")
     public String index(){
-        return "/index";
+        return "index";
     }
-    @RequestMapping("/get")
-    @ResponseBody
-    public Result get(){
-        return new Result(ErrorConstant.SUCCESS, "成功了");
+
+    @GetMapping("/404")
+    public String notFoundPage() {
+        return "404";
+    }
+
+    @GetMapping("/403")
+    public String accessError() {
+        return "403";
+    }
+
+    @GetMapping("/500")
+    public String internalError() {
+        return "500";
+    }
+
+    @GetMapping("/logout/page")
+    public String logout() {
+        return "logout";
     }
 }

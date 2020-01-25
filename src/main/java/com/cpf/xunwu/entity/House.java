@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@TableName(value = "`house")
+@TableName(value = "house")
 @Getter
 @Setter
 @NoArgsConstructor

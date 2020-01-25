@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.math.BigDecimal;
-@TableName(value = "`subway")
+@TableName(value = "subway")
 @Getter
 @Setter
 @NoArgsConstructor

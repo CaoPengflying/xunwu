@@ -3,5 +3,19 @@ spring:
     active: dev
   thymeleaf:
     mode: HTML
+    suffix: .html
+    prefix: classpath:/templates/
+  devtools:
+    restart:
+      exclude: templates/**,static/**
 server:
   port: 12000
+  error:
+    whitelabel:
+      enabled: false
+security:
+  basic:
+    enabled: false
+
+
+
