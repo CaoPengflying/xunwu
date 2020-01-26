@@ -40,7 +40,6 @@ dependencies {
     compile group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.11.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.2.2.RELEASE'
-
     compile(
             "mysql:mysql-connector-java",
             "com.alibaba:easyexcel:2.0.0",
@@ -52,8 +51,8 @@ dependencies {
             "org.slf4j:slf4j-api:1.7.25",
             "org.apache.commons:commons-lang3:3.4",
             "com.google.code.google-collections:google-collect:snapshot-20080530",
-            'com.qiniu:qiniu-java-sdk:7.2.27'
-
+            'com.qiniu:qiniu-java-sdk:7.2.27',
+            'org.modelmapper:modelmapper:2.3.5'
 
     )
 }

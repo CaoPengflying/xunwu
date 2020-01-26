@@ -26,5 +26,6 @@ qiniu:
   accessKey: oWVDkEnTv7i8PdpbmPRXaKa8AfacwtjMu82407EW
   secretKey: HIkO75z-LXLKRIUe0RpHfHzSuaDHJ_fI5RQbR7Hn
   bucket: cpfxunwu
-  cdn.prefix: q4pgrlkzk.bkt.clouddn.com
+  cdn:
+    prefix: http://q4pgrlkzk.bkt.clouddn.com/
 

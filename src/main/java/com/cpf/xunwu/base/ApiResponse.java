@@ -37,6 +37,13 @@ public class ApiResponse implements Serializable {
     public static ApiResponse ofSuccess(Object data) {
         return new ApiResponse(Status.SUCCESS.getCode(), Status.SUCCESS.getStandardMessage(), data);
     }
+    public static ApiResponse ofSuccessMultiResult(ServiceMultiResult serviceMultiResult){
+        if (serviceMultiResult.getTotal() == 0){
+            return ofStatus(Status.NOT_FOUND);
+        }else {
+            return ofSuccess(serviceMultiResult.getResult());
+        }
+    }
 
     public static ApiResponse ofStatus(Status status) {
         return new ApiResponse(status.getCode(), status.getStandardMessage(), null);

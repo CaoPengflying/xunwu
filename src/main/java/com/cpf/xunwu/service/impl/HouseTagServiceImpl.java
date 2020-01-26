@@ -7,7 +7,10 @@ import com.cpf.xunwu.mapper.HousePictureMapper;
 import com.cpf.xunwu.mapper.HouseTagMapper;
 import com.cpf.xunwu.service.HouseTagService;
 import org.springframework.stereotype.Service;
-
+/**
+ * @author caopengflying
+ * @time 2020/1/26
+ */
 @Service
 public class HouseTagServiceImpl extends ServiceImpl<HouseTagMapper, HouseTag> implements HouseTagService {
 }

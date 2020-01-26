@@ -7,7 +7,10 @@ import com.cpf.xunwu.mapper.HousePictureMapper;
 import com.cpf.xunwu.mapper.RoleMapper;
 import com.cpf.xunwu.service.RoleService;
 import org.springframework.stereotype.Service;
-
+/**
+ * @author caopengflying
+ * @time 2020/1/26
+ */
 @Service
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
 }

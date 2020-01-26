@@ -1,5 +1,6 @@
 package com.cpf.xunwu.config;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -62,6 +63,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter implements Application
 
     /**
      * 设置视图解析器
+     *
      * @return
      */
     @Bean
@@ -69,6 +71,15 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter implements Application
         ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
         thymeleafViewResolver.setTemplateEngine(templateEngine());
         return thymeleafViewResolver;
+    }
+
+    /**
+     * 模型转换器
+     * @return
+     */
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
     }
 }
 
