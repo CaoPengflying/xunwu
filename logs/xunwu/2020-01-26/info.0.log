@@ -3389,3 +3389,6 @@ Error starting ApplicationContext. To display the conditions report re-run your 
 [2020-01-26 22:16:07.994]  INFO  org.springframework.web.servlet.DispatcherServlet initServletBean  547 - Completed initialization in 4 ms
 [2020-01-26 22:16:08.431]  INFO  com.zaxxer.hikari.HikariDataSource getConnection  110 - HikariPool-1 - Starting...
 [2020-01-26 22:16:08.833]  INFO  com.zaxxer.hikari.HikariDataSource getConnection  123 - HikariPool-1 - Start completed.
+[2020-01-26 22:17:28.895]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 22:17:28.896]  INFO  com.zaxxer.hikari.HikariDataSource close  350 - HikariPool-1 - Shutdown initiated...
+[2020-01-26 22:17:28.900]  INFO  com.zaxxer.hikari.HikariDataSource close  352 - HikariPool-1 - Shutdown completed.

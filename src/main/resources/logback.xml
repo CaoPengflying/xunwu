@@ -137,9 +137,8 @@
     <springProfile name="dev">
         <!-- 日志输出级别 -->
         <!-- SQL相关日志输出-->
-        <logger name="org.apache.ibatis" level="DEBUG" additivity="TRUE" />
-        <logger name="org.mybatis.spring" level="DEBUG" additivity="TRUE" />
-        <logger name="com.github.miemiedev.mybatis.paginator" level="DEBUG" additivity="TRUE" />
+        <logger name="com.cpf.xunwu.mapper" level="DEBUG"/>
+        <logger name="com.cpf.xunwu.service" level="DEBUG"/>
 
         <root level="info">
             <appender-ref ref="STDOUT" />

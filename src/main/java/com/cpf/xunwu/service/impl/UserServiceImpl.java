@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cpf.xunwu.base.BusinessException;
 import com.cpf.xunwu.base.ErrorConstant;
+import com.cpf.xunwu.base.ServiceResult;
+import com.cpf.xunwu.dto.UserDto;
 import com.cpf.xunwu.entity.Role;
 import com.cpf.xunwu.mapper.UserMapper;
 import com.cpf.xunwu.entity.User;
@@ -11,19 +13,20 @@ import com.cpf.xunwu.service.RoleService;
 import com.cpf.xunwu.service.UserService;
 import com.google.common.collect.Lists;
 import org.apache.commons.collections4.CollectionUtils;
-import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
+import org.modelmapper.ModelMapper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Collections;
 import java.util.List;
 
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService  {
     @Resource
     private RoleService roleService;
+    @Resource
+    private ModelMapper modelMapper;
     @Override
     public User selectUserByName(String username) {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
@@ -42,6 +45,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         return user;
 
+    }
+
+    @Override
+    public ServiceResult<UserDto> getDetailById(Long adminId) {
+        User user = getById(adminId);
+        UserDto userDto = modelMapper.map(user, UserDto.class);
+        return ServiceResult.of(userDto);
     }
 }
 

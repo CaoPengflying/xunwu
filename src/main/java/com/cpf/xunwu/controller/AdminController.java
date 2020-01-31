@@ -112,7 +112,7 @@ public class AdminController {
             return ApiResponse.ofMessage(HttpStatus.BAD_REQUEST.value(), "必须上传图片");
         }
         ServiceResult<HouseDto> result = houseService.saveForm(houseForm);
-        if (result.getSuccess()) {
+        if (result.isSuccess()) {
             return ApiResponse.ofSuccess(result.getResult());
         } else {
             return ApiResponse.ofStatus(ApiResponse.Status.INTERNAL_SERVER_ERROR);

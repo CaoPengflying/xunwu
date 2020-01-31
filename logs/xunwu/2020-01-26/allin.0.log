@@ -11866,3 +11866,6 @@ Caused by: java.lang.ClassNotFoundException: com.cpf.xunwu.base.ApiDataTableResp
 [2020-01-26 22:16:33.806]  DEBUG org.mybatis.spring.SqlSessionUtils debug  49 - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3058f11d] was not registered for synchronization because synchronization is not active
 [2020-01-26 22:16:33.836]  DEBUG org.mybatis.spring.transaction.SpringManagedTransaction debug  49 - JDBC Connection [HikariProxyConnection@1191709859 wrapping com.mysql.cj.jdbc.ConnectionImpl@493caf57] will not be managed by Spring
 [2020-01-26 22:16:33.876]  DEBUG org.mybatis.spring.SqlSessionUtils debug  49 - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3058f11d]
+[2020-01-26 22:17:28.895]  INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor shutdown  208 - Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-01-26 22:17:28.896]  INFO  com.zaxxer.hikari.HikariDataSource close  350 - HikariPool-1 - Shutdown initiated...
+[2020-01-26 22:17:28.900]  INFO  com.zaxxer.hikari.HikariDataSource close  352 - HikariPool-1 - Shutdown completed.

@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @ToString
 public class HouseDto {
-    private Long id;
+    private Integer id;
 
     private String title;
 

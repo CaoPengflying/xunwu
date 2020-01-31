@@ -7,6 +7,7 @@ import com.cpf.xunwu.dto.HouseDto;
 import com.cpf.xunwu.entity.House;
 import com.cpf.xunwu.form.DatatableSearch;
 import com.cpf.xunwu.form.HouseForm;
+import com.cpf.xunwu.form.RentSearch;
 
 public interface HouseService extends IService<House> {
     /**
@@ -23,4 +24,17 @@ public interface HouseService extends IService<House> {
      */
     ServiceMultiResult<HouseDto> adminQuery(DatatableSearch datatableSearch);
 
+    /**
+     * 查询房屋信息
+     * @param rentSearch
+     * @return
+     */
+    ServiceMultiResult<HouseDto> search(RentSearch rentSearch);
+
+    /**
+     * 根据房屋id获取明细
+     * @param houseId
+     * @return
+     */
+    ServiceResult<HouseDto> getDetail(Integer houseId);
 }

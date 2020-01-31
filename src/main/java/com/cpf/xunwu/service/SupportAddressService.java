@@ -2,6 +2,7 @@ package com.cpf.xunwu.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cpf.xunwu.base.ServiceMultiResult;
+import com.cpf.xunwu.base.ServiceResult;
 import com.cpf.xunwu.dto.SupportAddressDto;
 import com.cpf.xunwu.entity.House;
 import com.cpf.xunwu.entity.SupportAddress;
@@ -29,4 +30,11 @@ public interface SupportAddressService extends IService<SupportAddress> {
      * @return
      */
     Map<String, SupportAddressDto> getCityAndRegion(String cityEnName, String regionEnName);
+
+    /**
+     * 根据城市名称获取城市详情
+     * @param cityEnName
+     * @return
+     */
+    ServiceResult<SupportAddressDto> getCityByEnName(String cityEnName);
 }

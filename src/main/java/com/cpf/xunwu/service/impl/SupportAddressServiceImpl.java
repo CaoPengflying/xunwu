@@ -3,6 +3,7 @@ package com.cpf.xunwu.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cpf.xunwu.base.ServiceMultiResult;
+import com.cpf.xunwu.base.ServiceResult;
 import com.cpf.xunwu.constants.SupportAddressConstants;
 import com.cpf.xunwu.dto.SupportAddressDto;
 import com.cpf.xunwu.entity.HousePicture;
@@ -12,6 +13,7 @@ import com.cpf.xunwu.mapper.SupportAddressMapper;
 import com.cpf.xunwu.service.SupportAddressService;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -25,13 +27,14 @@ import java.util.Map;
 public class SupportAddressServiceImpl extends ServiceImpl<SupportAddressMapper, SupportAddress> implements SupportAddressService {
     @Resource
     private ModelMapper modelMapper;
+
     @Override
     public ServiceMultiResult<SupportAddressDto> getAllCities() {
         QueryWrapper<SupportAddress> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(SupportAddress::getLevel, SupportAddressConstants.LevelEnum.CITY.getCode());
         List<SupportAddress> list = list(queryWrapper);
         List<SupportAddressDto> supportAddressDtoList = Lists.newArrayList();
-        list.forEach(e -> supportAddressDtoList.add(modelMapper.map(e,SupportAddressDto.class)));
+        list.forEach(e -> supportAddressDtoList.add(modelMapper.map(e, SupportAddressDto.class)));
         return new ServiceMultiResult<>(supportAddressDtoList, supportAddressDtoList.size());
     }
 
@@ -39,10 +42,10 @@ public class SupportAddressServiceImpl extends ServiceImpl<SupportAddressMapper,
     public ServiceMultiResult<SupportAddressDto> getRegionsByCityName(String cityName) {
         QueryWrapper<SupportAddress> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(SupportAddress::getBelongTo, cityName)
-        .eq(SupportAddress::getLevel, SupportAddressConstants.LevelEnum.REGION.getCode());
+                .eq(SupportAddress::getLevel, SupportAddressConstants.LevelEnum.REGION.getCode());
         List<SupportAddress> list = list(queryWrapper);
         List<SupportAddressDto> supportAddressDtoList = Lists.newArrayList();
-        list.forEach(e -> supportAddressDtoList.add(modelMapper.map(e,SupportAddressDto.class)));
+        list.forEach(e -> supportAddressDtoList.add(modelMapper.map(e, SupportAddressDto.class)));
         return new ServiceMultiResult<>(supportAddressDtoList, supportAddressDtoList.size());
     }
 
@@ -61,5 +64,19 @@ public class SupportAddressServiceImpl extends ServiceImpl<SupportAddressMapper,
         result.put(SupportAddressConstants.LevelEnum.CITY.getCode(), modelMapper.map(city, SupportAddressDto.class));
         result.put(SupportAddressConstants.LevelEnum.REGION.getCode(), modelMapper.map(region, SupportAddressDto.class));
         return result;
+    }
+
+    @Override
+    public ServiceResult<SupportAddressDto> getCityByEnName(String cityEnName) {
+
+        if (StringUtils.isEmpty(cityEnName)) {
+            return ServiceResult.notFound();
+        }
+        QueryWrapper<SupportAddress> queryWrapper = new QueryWrapper<>();
+        queryWrapper.lambda()
+                .eq(SupportAddress::getEnName, cityEnName).eq(SupportAddress::getLevel, SupportAddressConstants.LevelEnum.CITY.getCode());
+        SupportAddress supportAddress = getOne(queryWrapper);
+        SupportAddressDto supportAddressDto = modelMapper.map(supportAddress, SupportAddressDto.class);
+        return ServiceResult.of(supportAddressDto);
     }
 }
