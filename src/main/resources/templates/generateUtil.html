@@ -18,8 +18,29 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>模块名称：</label>
             <div class="formControls col-xs-8 col-sm-2">
-                <input type="text" class="input-text" value="" placeholder="模块名称" id="moduleName"
-                       name="moduleName">
+                <span class="select-box" style="widows: 0;">
+				        <select name="moduleName" class="select">
+                            <option value="config">config</option>
+                            <option value="fi">fi</option>
+                            <option value="league">league</option>
+                            <option value="delivery">delivery</option>
+                            <option value="label">label</option>
+                            <option value="allot">allot</option>
+                            <option value="mall">mall</option>
+                            <option value="member">member</option>
+                            <option value="pos">pos</option>
+                            <option value="auth">auth</option>
+                            <option value="plan">plan</option>
+                            <option value="product">product</option>
+                            <option value="purchase">purchase</option>
+                            <option value="report">report</option>
+                            <option value="sale">sale</option>
+                            <option value="stock">stock</option>
+                            <option value="supplier">supplier</option>
+                            <option value="unionstock">unionstock</option>
+                            <option value="task">task</option>
+                        </select>
+				    </span>
             </div>
         </div>
         <div class="row cl">
@@ -39,7 +60,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>端口号：</label>
             <div class="formControls col-xs-8 col-sm-2">
-                <input type="text" class="input-text" value="" placeholder="端口号" id="port"
+                <input type="text" class="input-text" value="3306" placeholder="端口号" id="port"
                        name="port">
             </div>
         </div>
@@ -53,15 +74,22 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>数据库密码：</label>
             <div class="formControls col-xs-8 col-sm-2">
-                <input type="text" class="input-text" value="" placeholder="端口号" id="password"
+                <input type="text" class="input-text" value="" placeholder="数据库密码" id="password"
                        name="password">
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>项目名称：</label>
             <div class="formControls col-xs-8 col-sm-2">
-                <input type="text" class="input-text" value="" placeholder="项目名称" id="projectName"
-                       name="projectName">
+                <span class="select-box" style="widows: 0;">
+
+				        <select name="projectName" class="select">
+                            <option value="config">necoo</option>
+                            <option value="tesiro">tesiro</option>
+                            <option value="mclon">mclon</option>
+
+                        </select>
+				    </span>
             </div>
         </div>
 
@@ -108,6 +136,13 @@
             <div class="formControls col-xs-8 col-sm-2">
                 <input type="text" class="input-text" value="" placeholder="表名" id="tableName"
                        name="tableName">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>只生成模型：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="checkbox" class="checkbox" id="onlyModelFlag"
+                       name="onlyModelFlag">
             </div>
         </div>
         <div class="row cl">

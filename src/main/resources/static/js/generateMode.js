@@ -5,41 +5,41 @@
 $(function () {
     //表单验证
     $("#generate-model").validate({
-        // rules: {
-        //     desc: {
-        //         required: true,
-        //     },
-        //     moduleName: {
-        //         required: true,
-        //     },
-        //     auth: {
-        //         required: true,
-        //     },
-        //     host: {
-        //         required: true
-        //     },
-        //     port: {
-        //         required: true,
-        //     },
-        //     username: {
-        //         required: true
-        //     },
-        //     password: {
-        //         required: true
-        //     },
-        //     projectName: {
-        //         required: true,
-        //     },
-        //     templateType: {
-        //         required: true,
-        //     },
-        //     database: {
-        //         required: true,
-        //     },
-        //     tableName: {
-        //         required: true,
-        //     }
-        // },
+        rules: {
+            desc: {
+                required: true,
+            },
+            moduleName: {
+                required: true,
+            },
+            auth: {
+                required: true,
+            },
+            host: {
+                required: true
+            },
+            port: {
+                required: true,
+            },
+            username: {
+                required: true
+            },
+            password: {
+                required: true
+            },
+            projectName: {
+                required: true,
+            },
+            templateType: {
+                required: true,
+            },
+            database: {
+                required: true,
+            },
+            tableName: {
+                required: true,
+            }
+        },
         messages: { // 自定义提示信息
             templateType: '必须选择模板类型',
             projectName: '必须写项目名称',
@@ -65,10 +65,7 @@ $(function () {
                 success: function (data) {
                     if (data.code === 200) {
                         alert('提交成功！');
-                        var index = parent.layer.getFrameIndex(window.name);
-                        parent.$('.btn-refresh').click();
-                        parent.layer.close(index);
-                        removeIframe();
+                        window.location.href = data.data
                     } else {
                         layer.msg(data.message, {icon: 5, time: 2000});
                     }

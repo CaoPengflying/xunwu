@@ -40,7 +40,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
     private static Pattern blankPattern = Pattern.compile("\\s*|\t|\r|\n");
 
     @Override
-    public void generateTemplateModel(GenerateTemplateModelDto generateTemplateModelDto) {
+    public String generateTemplateModel(GenerateTemplateModelDto generateTemplateModelDto) {
         Map<String, String> resultMap = Maps.newHashMap();
         settingDefaultValue(generateTemplateModelDto);
         initTable(generateTemplateModelDto);
@@ -55,14 +55,14 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
                 resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\model\\" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
             }
         }
-        try {
-            readTemplateAndReplace(resultMap, generateTemplateModelDto);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (null != generateTemplateModelDto.getOnlyModelFlag() && !generateTemplateModelDto.getOnlyModelFlag()){
+            try {
+                readTemplateAndReplace(resultMap, generateTemplateModelDto);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        writeFile(resultMap, generateTemplateModelDto);
-
-
+        return writeFile(resultMap, generateTemplateModelDto);
     }
 
     /**
@@ -78,8 +78,9 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
             generateTemplateModelDto.setKeyId(underline2Camel(generateTemplateModelDto.getTableName()) + "Id");
         }
         if (StringUtils.isEmpty(generateTemplateModelDto.getEntityName())) {
-            generateTemplateModelDto.setEntityName(underline2Camel(generateTemplateModelDto.getTableName()).charAt(0) + 32 + underline2Camel(generateTemplateModelDto.getTableName()).substring(1));
+            generateTemplateModelDto.setEntityName(underline2Camel(generateTemplateModelDto.getTableName()).substring(0,1).toUpperCase() + underline2Camel(generateTemplateModelDto.getTableName()).substring(1));
         }
+        generateTemplateModelDto.setDatabase(generateTemplateModelDto.getProjectName() + "_" + generateTemplateModelDto.getDatabase());
     }
 
     /**
@@ -157,7 +158,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         resource = new ClassPathResource(templateUrl + "TemplateNameProvider.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName()+"\\" + generateTemplateModelDto.getEntityName() + "Provider.java", extTemplateNameContent);
+        resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\" + generateTemplateModelDto.getEntityName() + "Provider.java", extTemplateNameContent);
 
         // providerImpl
         resource = new ClassPathResource(templateUrl + "TemplateNameProviderImpl.java");
@@ -214,7 +215,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
      * @param resultMap
      * @param generateTemplateModelDto
      */
-    private void writeFile(Map<String, String> resultMap, GenerateTemplateModelDto generateTemplateModelDto) {
+    private String writeFile(Map<String, String> resultMap, GenerateTemplateModelDto generateTemplateModelDto) {
         File zipFile = new File(generateTemplateModelDto.getEntityName() + ".zip");
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(zipFile);
@@ -234,6 +235,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return zipFile.getAbsolutePath();
     }
 
     /**

@@ -67,6 +67,10 @@ public class GenerateTemplateModelDto implements Serializable {
      * 模板类型
      */
     private Integer templateType;
+    /**
+     * 是否只生成模型
+     */
+    private Boolean onlyModelFlag;
 
     private List<String> columns;
     private List<String> colTypes;
