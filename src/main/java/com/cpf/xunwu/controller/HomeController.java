@@ -35,4 +35,9 @@ public class HomeController {
     public String logout() {
         return "logout";
     }
+
+    @GetMapping("/generateUtil")
+    public String adminLoginPage() {
+        return "generateUtil";
+    }
 }

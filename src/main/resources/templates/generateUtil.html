@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="admin/common :: head"></div>
+    <title>后端代码生成工具</title>
+    <link rel="stylesheet" type="text/css" href="/lib/webuploader/0.1.5/webuploader.css">
+</head>
+<body>
+<content class="page-container">
+    <form class="form form-horizontal" id="generate-model">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>功能描述：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="功能描述" id="desc"
+                       name="desc">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>模块名称：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="模块名称" id="moduleName"
+                       name="moduleName">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>作者：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="作者" id="auth"
+                       name="auth">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">数据库地址：</label>
+            <div class="formControls col-xs-8 col-sm-5">
+                <input type="text" class="input-text" value="" placeholder="数据库地址"
+                       id="host" name="host">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>端口号：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="端口号" id="port"
+                       name="port">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>数据库账号：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="数据库账号" id="username"
+                       name="username">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>数据库密码：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="端口号" id="password"
+                       name="password">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>项目名称：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="项目名称" id="projectName"
+                       name="projectName">
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>模板类型：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                    <span class="select-box" style="widows: 0;">
+				        <select name="templateType" class="select">
+                           <option value="1">Mybatis-plus-basic</option>
+                            <option value="2">Mybatis-plus-form</option>
+                            <option value="3">TKmapper-basic</option>
+                            <option value="4">TKmapper-form</option>
+                        </select>
+				    </span>
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2">数据库名称：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                        <span class="select-box" style="widows: 0;">
+                            <select name="database" class="select" id="database">
+                                <option value="config">config</option>
+                                <option value="fi">fi</option>
+                                <option value="fran">fran</option>
+                                <option value="mall">mall</option>
+                                <option value="member">member</option>
+                                <option value="order">order</option>
+                                <option value="org">org</option>
+                                <option value="plan">plan</option>
+                                <option value="product">product</option>
+                                <option value="purchase">purchase</option>
+                                <option value="requis">requis</option>
+                                <option value="sales">sales</option>
+                                <option value="stock">stock</option>
+                                <option value="supplier">supplier</option>
+                                <option value="unionstock">unionstock</option>
+                            </select>
+                        </span>
+            </div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>表名：</label>
+            <div class="formControls col-xs-8 col-sm-2">
+                <input type="text" class="input-text" value="" placeholder="表名" id="tableName"
+                       name="tableName">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                <button class="btn btn-primary radius" type="submit"><i
+                        class="Hui-iconfont">&#xe632;</i> 提交审核
+                </button>
+            </div>
+        </div>
+    </form>
+    </div>
+</content>
+
+<footer th:include="admin/common :: footer"></footer>
+<script type="text/javascript" src="/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="/lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="/lib/webuploader/0.1.5/webuploader.min.js"></script>
+<script type="text/javascript" src="/js/generateMode.js"></script>
+</body>
+</html>
