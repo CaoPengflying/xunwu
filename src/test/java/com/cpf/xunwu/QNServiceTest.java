@@ -22,9 +22,4 @@ public class QNServiceTest extends XunwuApplicationTests {
         Response response = qnService.uploadFile(file);
         Assert.assertTrue(response.isOK());
     }
-    @Test
-    public void testDeleteKey() throws QiniuException {
-        Response response = qnService.deleteFile("FrQCFuyWFoX99wLfOkIacyrbsxpX");
-        Assert.assertTrue(response.isOK());
-    }
 }

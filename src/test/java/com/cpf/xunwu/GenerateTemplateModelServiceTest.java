@@ -24,6 +24,7 @@ public class GenerateTemplateModelServiceTest extends XunwuApplicationTests {
         generateTemplateModelDto.setEntityName("MyTest");
         generateTemplateModelDto.setModuleName("platform");
         generateTemplateModelDto.setAuth("caopengflying");
+        generateTemplateModelDto.setTemplateType(GenerateTemplateModelConstants.TemplateTypeEnum.MYBATIS_PLUS_BASIC.getCode());
         try {
             generateTemplateModelService.readTemplateAndReplace(Maps.newHashMap(), generateTemplateModelDto);
         } catch (IOException e) {
@@ -40,7 +41,8 @@ public class GenerateTemplateModelServiceTest extends XunwuApplicationTests {
         generateTemplateModelDto.setHost("rm-uf6sia30x7328dj99fo.mysql.rds.aliyuncs.com");
         generateTemplateModelDto.setUsername("leysen_manager");
         generateTemplateModelDto.setPassword("rfmzJTsGUooL&yrd");
-        generateTemplateModelDto.setDatabase("tesiro_stock");
+        generateTemplateModelDto.setDatabase("stock");
+        generateTemplateModelDto.setProjectName("tesiro");
         generateTemplateModelDto.setTableName("css_test_import");
         generateTemplateModelDto.setEntityName("CssTestImport");
         generateTemplateModelDto.setPort("3306");
