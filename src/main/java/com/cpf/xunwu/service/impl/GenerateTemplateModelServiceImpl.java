@@ -55,7 +55,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
                 resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\model\\" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
             }
         }
-        if (null != generateTemplateModelDto.getOnlyModelFlag() && !generateTemplateModelDto.getOnlyModelFlag()){
+        if (null == generateTemplateModelDto.getOnlyModelFlag() || !generateTemplateModelDto.getOnlyModelFlag()){
             try {
                 readTemplateAndReplace(resultMap, generateTemplateModelDto);
             } catch (IOException e) {
