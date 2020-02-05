@@ -1,9 +1,0 @@
-2020-01-23 22:36:41.923 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 22:36:47.305 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 22:38:24.308 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 22:38:34.530 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 22:40:31.670 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 22:40:48.146 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 22:42:55.567 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 22:48:45.866 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised
-2020-01-23 23:27:21.416 [restartedMain][] WARN  org.apache.tomcat.util.modeler.Registry - The MBean registry cannot be disabled because it has already been initialised

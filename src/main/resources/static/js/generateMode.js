@@ -65,7 +65,7 @@ $(function () {
                 success: function (data) {
                     if (data.code === 200) {
                         alert('提交成功！');
-                        window.location.href = data.data
+                        window.location.href = data.data + "?attname=generateFile.zip";
                     } else {
                         layer.msg(data.message, {icon: 5, time: 2000});
                     }

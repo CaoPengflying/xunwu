@@ -40,10 +40,10 @@ public class QNServiceImpl implements QNService, InitializingBean {
 
     @Override
     public Response uploadFile(File file) throws QiniuException {
-        Response response = this.uploadManager.put(file, file.getName(), getUploadToken(file.getName()));
+        Response response = this.uploadManager.put(file,null, getUploadToken());
         int retry = 0;
         while (retry < ApplicationConstants.QN_RETRY_TIMES && response.needRetry()) {
-            response = this.uploadManager.put(file, file.getName(), getUploadToken(file.getName()));
+            response = this.uploadManager.put(file, null, getUploadToken());
             retry++;
         }
         return response;
@@ -51,10 +51,10 @@ public class QNServiceImpl implements QNService, InitializingBean {
 
     @Override
     public Response uploadFile(InputStream inputStream) throws QiniuException {
-        Response response = this.uploadManager.put(inputStream, null, getUploadToken(null), null, null);
+        Response response = this.uploadManager.put(inputStream, null, getUploadToken(), null, null);
         int retry = 0;
         while (retry < ApplicationConstants.QN_RETRY_TIMES && response.needRetry()) {
-            response = this.uploadManager.put(inputStream, null, getUploadToken(null), null, null);
+            response = this.uploadManager.put(inputStream, null, getUploadToken(), null, null);
             retry++;
         }
         return response;
@@ -78,7 +78,7 @@ public class QNServiceImpl implements QNService, InitializingBean {
     }
 
 
-    public String getUploadToken(String key) {
-        return this.auth.uploadToken(bucket, key, 3600, putPolicy);
+    public String getUploadToken() {
+        return this.auth.uploadToken(bucket, null, 3600, putPolicy);
     }
 }

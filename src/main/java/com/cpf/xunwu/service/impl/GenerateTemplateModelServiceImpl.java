@@ -1,18 +1,26 @@
 package com.cpf.xunwu.service.impl;
 
 import com.alibaba.excel.util.DateUtils;
+import com.cpf.xunwu.base.ApiResponse;
 import com.cpf.xunwu.base.BusinessException;
+import com.cpf.xunwu.base.QiNiuPurRet;
 import com.cpf.xunwu.constants.GenerateTemplateModelConstants;
 import com.cpf.xunwu.dto.GenerateTemplateModelDto;
 import com.cpf.xunwu.service.GenerateTemplateModelService;
+import com.cpf.xunwu.service.QNService;
 import com.google.common.collect.Maps;
+import com.google.gson.Gson;
+import com.qiniu.common.QiniuException;
+import com.qiniu.http.Response;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.util.Lists;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
@@ -39,8 +47,15 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
     private static Pattern pattern = Pattern.compile("([A-Za-z\\d]+)(_)?");
     private static Pattern blankPattern = Pattern.compile("\\s*|\t|\r|\n");
 
+    @javax.annotation.Resource
+    private QNService qnService;
+    @javax.annotation.Resource
+    private Gson gson;
+    @Value("${qiniu.cdn.prefix}")
+    private String cdnPrefix;
+
     @Override
-    public String generateTemplateModel(GenerateTemplateModelDto generateTemplateModelDto) {
+    public ApiResponse generateTemplateModel(GenerateTemplateModelDto generateTemplateModelDto) {
         Map<String, String> resultMap = Maps.newHashMap();
         settingDefaultValue(generateTemplateModelDto);
         initTable(generateTemplateModelDto);
@@ -211,11 +226,10 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
 
     /**
      * 生成文件
-     *
-     * @param resultMap
+     *  @param resultMap
      * @param generateTemplateModelDto
      */
-    private String writeFile(Map<String, String> resultMap, GenerateTemplateModelDto generateTemplateModelDto) {
+    private ApiResponse writeFile(Map<String, String> resultMap, GenerateTemplateModelDto generateTemplateModelDto) {
         File zipFile = new File(generateTemplateModelDto.getEntityName() + ".zip");
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(zipFile);
@@ -235,7 +249,21 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return zipFile.getAbsolutePath();
+        InputStream ins = null;
+        try {
+            ins = new FileInputStream(zipFile);
+            Response response = qnService.uploadFile(ins);
+            zipFile.delete();
+            if (response.isOK()) {
+                QiNiuPurRet qiNiuPurRet = gson.fromJson(response.bodyString(), QiNiuPurRet.class);
+                return ApiResponse.ofSuccess(cdnPrefix + qiNiuPurRet.key);
+            } else {
+                return ApiResponse.ofMessage(response.statusCode, response.getInfo());
+            }
+        } catch (FileNotFoundException | QiniuException e) {
+            e.printStackTrace();
+            return ApiResponse.ofStatus(ApiResponse.Status.INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**

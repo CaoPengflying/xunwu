@@ -21,6 +21,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
 
 /**
  * @author caopengflying
@@ -40,19 +42,7 @@ public class GenerateUtilController {
     @PostMapping("/generate/generateModel")
     @ResponseBody
     public ApiResponse generateModel(GenerateTemplateModelDto generateTemplateModelDto) {
-        String filePath = generateTemplateModelService.generateTemplateModel(generateTemplateModelDto);
-        try {
-            File f = new File(new String(filePath.getBytes("ISO8859-1"), "utf-8"));
-            Response response = qnService.uploadFile(f);
-            if (response.isOK()) {
-                QiNiuPurRet qiNiuPurRet = gson.fromJson(response.bodyString(), QiNiuPurRet.class);
-                return ApiResponse.ofSuccess(cdnPrefix + qiNiuPurRet.key);
-            } else {
-                return ApiResponse.ofMessage(response.statusCode, response.getInfo());
-            }
-        } catch (IOException e) {
-            return ApiResponse.ofStatus(ApiResponse.Status.INTERNAL_SERVER_ERROR);
-        }
+        return generateTemplateModelService.generateTemplateModel(generateTemplateModelDto);
     }
 }
 

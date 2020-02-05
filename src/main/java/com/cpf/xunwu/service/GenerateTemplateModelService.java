@@ -1,10 +1,9 @@
 package com.cpf.xunwu.service;
 
+import com.cpf.xunwu.base.ApiResponse;
 import com.cpf.xunwu.dto.GenerateTemplateModelDto;
-import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.OutputStream;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author caopengflying
@@ -15,5 +14,5 @@ public interface GenerateTemplateModelService {
      * 生成模板代码
      * @param generateTemplateModelDto
      */
-    String generateTemplateModel(GenerateTemplateModelDto generateTemplateModelDto);
+    ApiResponse generateTemplateModel(GenerateTemplateModelDto generateTemplateModelDto);
 }
