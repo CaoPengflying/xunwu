@@ -54,7 +54,7 @@ import java.util.UUID;
  * @date Created in TemplateCreateDate
  */
 @QineasyService
-@RequestMapping(value = "templateName", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+@RequestMapping(value = "templateModule/templateName", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class TemplateNameController {
 
     private static final Logger logger = LoggerFactory.getLogger(TemplateNameController.class);
