@@ -22,11 +22,11 @@ public class GenerateTemplateModelServiceTest extends XunwuApplicationTests {
         GenerateTemplateModelDto generateTemplateModelDto = new GenerateTemplateModelDto();
         generateTemplateModelDto.setDesc("测试");
         generateTemplateModelDto.setEntityName("MyTest");
-        generateTemplateModelDto.setModuleName("platform");
+        generateTemplateModelDto.setModuleName("member");
         generateTemplateModelDto.setAuth("caopengflying");
-        generateTemplateModelDto.setTemplateType(GenerateTemplateModelConstants.TemplateTypeEnum.MYBATIS_PLUS_BASIC.getCode());
+        generateTemplateModelDto.setTemplateType(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode());
         try {
-            generateTemplateModelService.readTemplateAndReplace(Maps.newHashMap(), generateTemplateModelDto);
+            generateTemplateModelService.readTemplateAndReplace(Maps.newHashMap(), generateTemplateModelDto, "");
         } catch (IOException e) {
             e.printStackTrace();
         }

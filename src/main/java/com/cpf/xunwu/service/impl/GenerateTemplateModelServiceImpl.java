@@ -20,7 +20,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
@@ -59,6 +58,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         Map<String, String> resultMap = Maps.newHashMap();
         settingDefaultValue(generateTemplateModelDto);
         initTable(generateTemplateModelDto);
+        String columnsContent = "";
         if (GenerateTemplateModelConstants.TemplateTypeEnum.MYBATIS_PLUS_BASIC.getCode().equals(generateTemplateModelDto.getTemplateType())) {
             Map<String, String> stringStringMap = generatePlusEntityInfo(generateTemplateModelDto);
             for (Map.Entry<String, String> stringStringEntry : stringStringMap.entrySet()) {
@@ -67,12 +67,16 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         } else {
             Map<String, String> stringStringMap = generateEntityInfo(generateTemplateModelDto);
             for (Map.Entry<String, String> stringStringEntry : stringStringMap.entrySet()) {
-                resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\model\\" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
+                if (!stringStringEntry.getKey().equals("columnsContent")) {
+                    resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\model\\" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
+                } else {
+                    columnsContent = stringStringEntry.getValue();
+                }
             }
         }
-        if (null == generateTemplateModelDto.getOnlyModelFlag() || !generateTemplateModelDto.getOnlyModelFlag()){
+        if (null == generateTemplateModelDto.getOnlyModelFlag() || !generateTemplateModelDto.getOnlyModelFlag()) {
             try {
-                readTemplateAndReplace(resultMap, generateTemplateModelDto);
+                readTemplateAndReplace(resultMap, generateTemplateModelDto, columnsContent);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -93,7 +97,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
             generateTemplateModelDto.setKeyId(underline2Camel(generateTemplateModelDto.getTableName()) + "Id");
         }
         if (StringUtils.isEmpty(generateTemplateModelDto.getEntityName())) {
-            generateTemplateModelDto.setEntityName(underline2Camel(generateTemplateModelDto.getTableName()).substring(0,1).toUpperCase() + underline2Camel(generateTemplateModelDto.getTableName()).substring(1));
+            generateTemplateModelDto.setEntityName(underline2Camel(generateTemplateModelDto.getTableName()).substring(0, 1).toUpperCase() + underline2Camel(generateTemplateModelDto.getTableName()).substring(1));
         }
         generateTemplateModelDto.setDatabase(generateTemplateModelDto.getProjectName() + "_" + generateTemplateModelDto.getDatabase());
     }
@@ -103,8 +107,9 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
      *
      * @param resultMap
      * @param generateTemplateModelDto
+     * @param columnsContent
      */
-    public void readTemplateAndReplace(Map<String, String> resultMap, GenerateTemplateModelDto generateTemplateModelDto) throws IOException {
+    public void readTemplateAndReplace(Map<String, String> resultMap, GenerateTemplateModelDto generateTemplateModelDto, String columnsContent) throws IOException {
         String dir;
         String type;
         if (GenerateTemplateModelConstants.TemplateTypeEnum.MYBATIS_PLUS_BASIC.getCode().equals(generateTemplateModelDto.getTemplateType())) {
@@ -124,6 +129,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         }
         String templateUrl = "static/template/" + dir + "/" + type + "/";
         //扩展类
+//        static/template.tkmapper/basic/ExtTemplateName.java
         Resource resource = new ClassPathResource(templateUrl + "ExtTemplateName.java");
         String extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         String extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
@@ -132,13 +138,20 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         resource = new ClassPathResource(templateUrl + "TemplateNameBizService.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\" + generateTemplateModelDto.getEntityName() + "BizService.java", extTemplateNameContent);
+        if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
+            resultMap.put("bomc\\bomc-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\" + generateTemplateModelDto.getEntityName() + "BizService.java", extTemplateNameContent);
+        } else {
+            resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\" + generateTemplateModelDto.getEntityName() + "BizService.java", extTemplateNameContent);
+        }
         //BizServiceImpl
         resource = new ClassPathResource(templateUrl + "TemplateNameBizServiceImpl.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\implement\\" + generateTemplateModelDto.getEntityName() + "BizServiceImpl.java", extTemplateNameContent);
-
+        if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
+            resultMap.put("bomc\\bomc-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\implement\\" + generateTemplateModelDto.getEntityName() + "BizServiceImpl.java", extTemplateNameContent);
+        } else {
+            resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\implement\\" + generateTemplateModelDto.getEntityName() + "BizServiceImpl.java", extTemplateNameContent);
+        }
         //Constants
         resource = new ClassPathResource(templateUrl + "TemplateNameConstants.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
@@ -149,12 +162,20 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         resource = new ClassPathResource(templateUrl + "TemplateNameController.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\web\\" + generateTemplateModelDto.getEntityName() + "Controller.java", extTemplateNameContent);
+        if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
+            resultMap.put("bomc\\bomc-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\web\\" + generateTemplateModelDto.getEntityName() + "Controller.java", extTemplateNameContent);
+        } else {
+            resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\web\\" + generateTemplateModelDto.getEntityName() + "Controller.java", extTemplateNameContent);
+        }
 
         //Enum
         resource = new ClassPathResource(templateUrl + "TemplateNameEnum.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
+        if (StringUtils.isNotBlank(columnsContent)) {
+            extTemplateNameContent = extTemplateNameContent.replaceAll("__REPLACE_CONTENT", columnsContent);
+
+        }
         resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\enums\\" + generateTemplateModelDto.getEntityName() + "Enum.java", extTemplateNameContent);
 
         // Handle
@@ -226,7 +247,8 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
 
     /**
      * 生成文件
-     *  @param resultMap
+     *
+     * @param resultMap
      * @param generateTemplateModelDto
      */
     private ApiResponse writeFile(Map<String, String> resultMap, GenerateTemplateModelDto generateTemplateModelDto) {
@@ -295,7 +317,6 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         entityContent.append("@Data").append("\r\n");
         entityContent.append("public class ").append(entityInfo.getEntityName()).append(" implements Serializable").append(" {").append("\r" +
                 "\n");
-        entityContent.append("\t@Id\r\n");
         for (int i = 0; i < entityInfo.getColumns().size(); i++) {
             String colComment = entityInfo.getColComment().get(i);
             if (StringUtils.isNotEmpty(colComment)) {
@@ -314,6 +335,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
                 columnsContent.append(",\n");
             }
             if (entityInfo.getKeyId().equals(columnName)) {
+                entityContent.append("\t@Id\r\n");
                 entityContent.append("\t@GeneratedValue(strategy = GenerationType.IDENTITY)\r\n");
             }
             entityContent.append("\tprivate ").append(getType(entityInfo.getColTypes().get(i))).append(" ").append(columnName)
@@ -322,7 +344,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         }
         entityContent.append("\r\n");
         entityContent.append("}\r\n");
-        resultMap.put("entityContent", entityContent.toString());
+        resultMap.put(entityInfo.getEntityName(), entityContent.toString());
         resultMap.put("columnsContent", columnsContent.toString());
         return resultMap;
     }
