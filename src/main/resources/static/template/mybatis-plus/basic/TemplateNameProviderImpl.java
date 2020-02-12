@@ -56,7 +56,7 @@ public class TemplateNameProviderImpl extends BasePlusProviderImpl<ExtTemplateNa
             // 1、校验入参
             String errorMsg = TemplateNameHandle.checkCreate(extTemplateName);
             if (StringUtils.isNotEmpty(errorMsg)) {
-                throw new BusinessException(errorMsg.toString());
+                throw new BusinessException(errorMsg);
             }
             // 2、执行保存方法
             return templateNameService.create(extTemplateName);
@@ -80,7 +80,7 @@ public class TemplateNameProviderImpl extends BasePlusProviderImpl<ExtTemplateNa
             // 1、校验入参
             String errorMsg = TemplateNameHandle.checkDelete(extTemplateName);
             if (StringUtils.isNotEmpty(errorMsg)) {
-                throw new BusinessException(errorMsg.toString());
+                throw new BusinessException(errorMsg);
             }
             // 2、执行删除方法
             return templateNameService.delete(extTemplateName);
@@ -103,7 +103,7 @@ public class TemplateNameProviderImpl extends BasePlusProviderImpl<ExtTemplateNa
             // 1、校验入参
             String errorMsg = TemplateNameHandle.checkUpdate(extTemplateName);
             if (StringUtils.isNotEmpty(errorMsg)) {
-                throw new BusinessException(errorMsg.toString());
+                throw new BusinessException(errorMsg);
             }
             // 2、执行修改方法
             return templateNameService.update(extTemplateName);
@@ -126,7 +126,7 @@ public class TemplateNameProviderImpl extends BasePlusProviderImpl<ExtTemplateNa
             // 1、校验入参
             String errorMsg = TemplateNameHandle.checkGet(extTemplateName);
             if (StringUtils.isNotEmpty(errorMsg)) {
-                throw new BusinessException(errorMsg.toString());
+                throw new BusinessException(errorMsg);
             }
             // 2、执行获取详情方法
             return templateNameService.get(extTemplateName);
