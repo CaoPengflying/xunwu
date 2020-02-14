@@ -43,8 +43,8 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
     /**
      * 下划线正则表达式
      */
-    private static Pattern pattern = Pattern.compile("([A-Za-z\\d]+)(_)?");
-    private static Pattern blankPattern = Pattern.compile("\\s*|\t|\r|\n");
+    private static Pattern pattern = Pattern.compile("([A-Za-z/d]+)(_)?");
+    private static Pattern blankPattern = Pattern.compile("/s*|\t|\r|\n");
 
     @javax.annotation.Resource
     private QNService qnService;
@@ -62,13 +62,13 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         if (GenerateTemplateModelConstants.TemplateTypeEnum.MYBATIS_PLUS_BASIC.getCode().equals(generateTemplateModelDto.getTemplateType())) {
             Map<String, String> stringStringMap = generatePlusEntityInfo(generateTemplateModelDto);
             for (Map.Entry<String, String> stringStringEntry : stringStringMap.entrySet()) {
-                resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\model\\" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
+                resultMap.put("facade/facade-service-api/src/main/java/com/mclon/facade/service/api/" + generateTemplateModelDto.getModuleName() + "/model/" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
             }
         } else {
             Map<String, String> stringStringMap = generateEntityInfo(generateTemplateModelDto);
             for (Map.Entry<String, String> stringStringEntry : stringStringMap.entrySet()) {
                 if (!stringStringEntry.getKey().equals("columnsContent")) {
-                    resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\model\\" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
+                    resultMap.put("facade/facade-service-api/src/main/java/com/mclon/facade/service/api/" + generateTemplateModelDto.getModuleName() + "/model/" + stringStringEntry.getKey() + ".java", stringStringEntry.getValue());
                 } else {
                     columnsContent = stringStringEntry.getValue();
                 }
@@ -133,39 +133,39 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         Resource resource = new ClassPathResource(templateUrl + "ExtTemplateName.java");
         String extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         String extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\extmodel\\Ext" + generateTemplateModelDto.getEntityName() + ".java", extTemplateNameContent);
+        resultMap.put("facade/facade-service-api/src/main/java/com/mclon/facade/service/api/" + generateTemplateModelDto.getModuleName() + "/extmodel/Ext" + generateTemplateModelDto.getEntityName() + ".java", extTemplateNameContent);
         //BizService
         resource = new ClassPathResource(templateUrl + "TemplateNameBizService.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
         if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
-            resultMap.put("bomc\\bomc-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\" + generateTemplateModelDto.getEntityName() + "BizService.java", extTemplateNameContent);
+            resultMap.put("bomc/bomc-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/bomc/support/" + generateTemplateModelDto.getModuleName() + "/service/" + generateTemplateModelDto.getEntityName() + "BizService.java", extTemplateNameContent);
         } else {
-            resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\" + generateTemplateModelDto.getEntityName() + "BizService.java", extTemplateNameContent);
+            resultMap.put("bomc/bomc-support-platform/src/main/java/com/mclon/bomc/support/" + generateTemplateModelDto.getModuleName() + "/service/" + generateTemplateModelDto.getEntityName() + "BizService.java", extTemplateNameContent);
         }
         //BizServiceImpl
         resource = new ClassPathResource(templateUrl + "TemplateNameBizServiceImpl.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
         if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
-            resultMap.put("bomc\\bomc-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\implement\\" + generateTemplateModelDto.getEntityName() + "BizServiceImpl.java", extTemplateNameContent);
+            resultMap.put("bomc/bomc-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/bomc/support/" + generateTemplateModelDto.getModuleName() + "/service/implement/" + generateTemplateModelDto.getEntityName() + "BizServiceImpl.java", extTemplateNameContent);
         } else {
-            resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\implement\\" + generateTemplateModelDto.getEntityName() + "BizServiceImpl.java", extTemplateNameContent);
+            resultMap.put("bomc/bomc-support-platform/src/main/java/com/mclon/bomc/support/" + generateTemplateModelDto.getModuleName() + "/service/implement/" + generateTemplateModelDto.getEntityName() + "BizServiceImpl.java", extTemplateNameContent);
         }
         //Constants
         resource = new ClassPathResource(templateUrl + "TemplateNameConstants.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\constants\\" + generateTemplateModelDto.getEntityName() + "Constants.java", extTemplateNameContent);
+        resultMap.put("facade/facade-service-api/src/main/java/com/mclon/facade/service/api/" + generateTemplateModelDto.getModuleName() + "/constants/" + generateTemplateModelDto.getEntityName() + "Constants.java", extTemplateNameContent);
 
         //Controller
         resource = new ClassPathResource(templateUrl + "TemplateNameController.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
         if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
-            resultMap.put("bomc\\bomc-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\web\\" + generateTemplateModelDto.getEntityName() + "Controller.java", extTemplateNameContent);
+            resultMap.put("bomc/bomc-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/bomc/support/" + generateTemplateModelDto.getModuleName() + "/web/" + generateTemplateModelDto.getEntityName() + "Controller.java", extTemplateNameContent);
         } else {
-            resultMap.put("bomc\\bomc-support-platform\\src\\main\\java\\com\\mclon\\bomc\\support\\" + generateTemplateModelDto.getModuleName() + "\\web\\" + generateTemplateModelDto.getEntityName() + "Controller.java", extTemplateNameContent);
+            resultMap.put("bomc/bomc-support-platform/src/main/java/com/mclon/bomc/support/" + generateTemplateModelDto.getModuleName() + "/web/" + generateTemplateModelDto.getEntityName() + "Controller.java", extTemplateNameContent);
         }
 
         //Enum
@@ -176,43 +176,46 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
             extTemplateNameContent = extTemplateNameContent.replaceAll("__REPLACE_CONTENT", columnsContent);
 
         }
-        resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\enums\\" + generateTemplateModelDto.getEntityName() + "Enum.java", extTemplateNameContent);
+        resultMap.put("facade/facade-service-api/src/main/java/com/mclon/facade/service/api/" + generateTemplateModelDto.getModuleName() + "/enums/" + generateTemplateModelDto.getEntityName() + "Enum.java", extTemplateNameContent);
 
         // Handle
         resource = new ClassPathResource(templateUrl + "TemplateNameHandle.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("kernel\\kernel-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\kernel\\support\\" + generateTemplateModelDto.getModuleName() + "\\handle\\" + generateTemplateModelDto.getEntityName() + "Handle.java", extTemplateNameContent);
+        resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/kernel/support/" + generateTemplateModelDto.getModuleName() + "/handle/" + generateTemplateModelDto.getEntityName() + "Handle.java", extTemplateNameContent);
 
         // mapper
         resource = new ClassPathResource(templateUrl + "TemplateNameMapper.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("kernel\\kernel-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\kernel\\support\\" + generateTemplateModelDto.getModuleName() + "\\mapper\\" + generateTemplateModelDto.getEntityName() + "Mapper.java", extTemplateNameContent);
-
+        if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.TKMAPPER_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
+            resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/kernel/support/" + generateTemplateModelDto.getModuleName() + "/repository/" + generateTemplateModelDto.getEntityName() + "Mapper.java", extTemplateNameContent);
+        } else {
+            resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/kernel/support/" + generateTemplateModelDto.getModuleName() + "/mapper/" + generateTemplateModelDto.getEntityName() + "Mapper.java", extTemplateNameContent);
+        }
         // provider
         resource = new ClassPathResource(templateUrl + "TemplateNameProvider.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("facade\\facade-service-api\\src\\main\\java\\com\\mclon\\facade\\service\\api\\" + generateTemplateModelDto.getModuleName() + "\\" + generateTemplateModelDto.getEntityName() + "Provider.java", extTemplateNameContent);
+        resultMap.put("facade/facade-service-api/src/main/java/com/mclon/facade/service/api/" + generateTemplateModelDto.getModuleName() + "/" + generateTemplateModelDto.getEntityName() + "Provider.java", extTemplateNameContent);
 
         // providerImpl
         resource = new ClassPathResource(templateUrl + "TemplateNameProviderImpl.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("kernel\\kernel-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\kernel\\support\\" + generateTemplateModelDto.getModuleName() + "\\provider\\" + generateTemplateModelDto.getEntityName() + "ProviderImpl.java", extTemplateNameContent);
+        resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/kernel/support/" + generateTemplateModelDto.getModuleName() + "/provider/" + generateTemplateModelDto.getEntityName() + "ProviderImpl.java", extTemplateNameContent);
 
         // service
         resource = new ClassPathResource(templateUrl + "TemplateNameService.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("kernel\\kernel-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\kernel\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\" + generateTemplateModelDto.getEntityName() + "Service.java", extTemplateNameContent);
+        resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/kernel/support/" + generateTemplateModelDto.getModuleName() + "/service/" + generateTemplateModelDto.getEntityName() + "Service.java", extTemplateNameContent);
 
         // serviceImpl
         resource = new ClassPathResource(templateUrl + "TemplateNameServiceImpl.java");
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
-        resultMap.put("kernel\\kernel-support-" + generateTemplateModelDto.getModuleName() + "\\src\\main\\java\\com\\mclon\\kernel\\support\\" + generateTemplateModelDto.getModuleName() + "\\service\\impl\\" + generateTemplateModelDto.getEntityName() + "ServiceImpl.java", extTemplateNameContent);
+        resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/kernel/support/" + generateTemplateModelDto.getModuleName() + "/service/impl/" + generateTemplateModelDto.getEntityName() + "ServiceImpl.java", extTemplateNameContent);
 
     }
 
