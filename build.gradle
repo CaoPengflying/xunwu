@@ -41,10 +41,12 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.2.2.RELEASE'
     compile 'commons-io:commons-io:2.6'
+    compile 'org.freemarker:freemarker:2.3.29'
     compile(
             "mysql:mysql-connector-java",
             "com.alibaba:easyexcel:2.0.0",
             "com.baomidou:mybatis-plus-boot-starter:3.3.0",
+            "com.baomidou:mybatis-plus-generator:3.3.1.tmp",
             "org.springframework.boot:spring-boot-starter-test",
             "org.thymeleaf.extras:thymeleaf-extras-springsecurity5:3.0.4.RELEASE",
             "ch.qos.logback:logback-core:1.1.7",
