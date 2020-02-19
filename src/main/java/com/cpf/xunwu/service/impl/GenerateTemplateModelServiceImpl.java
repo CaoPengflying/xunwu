@@ -228,7 +228,21 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
         extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
         resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/java/com/mclon/kernel/support/" + generateTemplateModelDto.getModuleName() + "/service/impl/" + generateTemplateModelDto.getEntityName() + "ServiceImpl.java", extTemplateNameContent);
+        //mybatis xml
+        if (Lists.newArrayList(GenerateTemplateModelConstants.TemplateTypeEnum.MYBATIS_PLUS_FORM.getCode(), GenerateTemplateModelConstants.TemplateTypeEnum.MYBATIS_PLUS_BASIC.getCode()).contains(generateTemplateModelDto.getTemplateType())) {
+            resource = new ClassPathResource(templateUrl + "TemplateNameMapper.xml");
+            extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
+            extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
+            if (StringUtils.isNotBlank(columnsContent)) {
+                extTemplateNameContent = extTemplateNameContent.replaceAll("__REPLACE_CONTENT", columnsContent);
+            }
+            resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/resources/META-INF/" + generateTemplateModelDto.getModuleName() + "/" + generateTemplateModelDto.getEntityName() + "Mapper.xml", extTemplateNameContent);
 
+            resource = new ClassPathResource(templateUrl + "TemplateNameMapperExt.xml");
+            extTemplateNameOrigin = IOUtils.toString(resource.getInputStream(), StandardCharsets.UTF_8);
+            extTemplateNameContent = replaceContent(extTemplateNameOrigin, generateTemplateModelDto.getEntityName(), generateTemplateModelDto.getAuth(), generateTemplateModelDto.getDesc(), generateTemplateModelDto.getModuleName());
+            resultMap.put("kernel/kernel-support-" + generateTemplateModelDto.getModuleName() + "/src/main/resources/META-INF/" + generateTemplateModelDto.getModuleName() + "/" + generateTemplateModelDto.getEntityName() + "MapperExt.xml", extTemplateNameContent);
+        }
 
     }
 
