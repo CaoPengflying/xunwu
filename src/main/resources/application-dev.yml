@@ -27,5 +27,4 @@ qiniu:
   secretKey: HIkO75z-LXLKRIUe0RpHfHzSuaDHJ_fI5RQbR7Hn
   bucket: cpfxunwu
   cdn:
-    prefix: http://q4pgrlkzk.bkt.clouddn.com/
-
+    prefix: http://zips.lmcpf.com/
