@@ -21,6 +21,7 @@ spring:
       max-request-size: 20MB
       file-size-threshold: 5MB
 
+
 # 七牛
 qiniu:
   accessKey: oWVDkEnTv7i8PdpbmPRXaKa8AfacwtjMu82407EW

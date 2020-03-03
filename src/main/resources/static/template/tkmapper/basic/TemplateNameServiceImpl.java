@@ -1,4 +1,4 @@
-package com.mclon.kernel.support.templateModule.service.implement;
+package com.mclon.kernel.support.templateModule.service.impl;
 
 import com.mclon.facade.service.api.common.BaseModel;
 import com.mclon.facade.service.api.templateModule.constants.TemplateNameConstants;

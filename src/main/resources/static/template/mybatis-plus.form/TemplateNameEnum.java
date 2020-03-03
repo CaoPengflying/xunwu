@@ -5,13 +5,13 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 /**
- * @description TemplateDesc 明细枚举
+ * @description TemplateDesc 枚举
  * @author TemplateCreate
  * @date Created in TemplateCreateDate
  * @version fileUtilVersion
  */
-public class TemplateNameDetailEnum {
-	    /**
+public class TemplateNameEnum {
+	     /**
      * 状态枚举的map
      */
     public static Map<Integer, String> statusMap = Maps.newHashMap();
@@ -56,30 +56,6 @@ public class TemplateNameDetailEnum {
         }
 
         public Integer getCode() {
-            return code;
-        }
-
-        public String getName() {
-            return name;
-        }
-    }
-
-    /**
-     * 字段枚举
-     */
-    
-    public enum ColumnsEnum {
-__REPLACE_CONTENT
-
-        private String code;
-        private String name;
-
-        ColumnsEnum(String code, String name) {
-            this.code = code;
-            this.name = name;
-        }
-
-        public String getCode() {
             return code;
         }
 

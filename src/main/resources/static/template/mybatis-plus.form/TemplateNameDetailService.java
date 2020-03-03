@@ -8,16 +8,10 @@ import java.util.List;
 import com.mclon.commons.support.webmvc.result.Result;
 
 /**
- * @description TemplateDesc
  * @author TemplateCreate
- * @date Created in TemplateCreateDate
  * @version fileUtilVersion
+ * @description TemplateDesc
+ * @date Created in TemplateCreateDate
  */
-public interface TemplateNameService extends BaseService<TemplateNameForm> {
-     /**
-     * 根据条件查询
-     * @param object Example
-     * @return
-     */
-    Result<List<ExtTemplateName>> listByCondition(Object object);
+public interface TemplateNameDetailService extends BasePlusService<ExtTemplateDetailName,TemplateDetailName> {
 }

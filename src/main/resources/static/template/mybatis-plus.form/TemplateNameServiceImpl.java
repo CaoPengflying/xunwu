@@ -1,14 +1,15 @@
 package com.mclon.kernel.support.templateModule.service.implement;
 
 com.mclon.facade.service.api.framework.BusinessException;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.mclon.facade.service.api.templateModule.constants.TemplateNameConstants;
 import com.mclon.facade.service.api.templateModule.extmodel.ExtTemplateName;
 import com.mclon.facade.service.api.templateModule.extmodel.ExtTemplateNameDetail;
 import com.mclon.facade.service.api.templateModule.form.TemplateNameForm;
 import com.mclon.facade.service.api.templateModule.model.TemplateName;
 import com.mclon.facade.service.api.templateModule.model.TemplateNameDetail;
-import com.mclon.kernel.support.templateModule.repository.TemplateNameDetailMapper;
-import com.mclon.kernel.support.templateModule.repository.TemplateNameMapper;
+import com.mclon.kernel.support.templateModule.repository.TemplateNameDetailService;
+import com.mclon.kernel.support.templateModule.repository.templateNameService;
 import com.mclon.kernel.support.templateModule.service.TemplateNameService;
 import org.springframework.stereotype.Service;
 import org.apache.commons.collections4.CollectionUtils;
@@ -31,16 +32,14 @@ import java.util.List;
  * @version fileUtilVersion
  */
  @Service
-public class TemplateNameServiceImpl extends BaseServiceImpl<TemplateNameForm> implements TemplateNameService {
+public class TemplateNameServiceImpl extends BasePlusServiceImpl<TemplateNameMapper, TemplateName, TemplateNameForm> implements TemplateNameService {
 	/**
      * 日志
      */
     private static final Logger logger = LoggerFactory.getLogger(TemplateNameServiceImpl.class);
-
-    @Resource
-    private TemplateNameMapper templateNameMapper;
+    
 	@Resource
-	private TemplateNameDetailMapper templateNameDetailMapper;
+	private TemplateNameDetailService templateNameDetailService;
 
     /**
      * 标准新增
@@ -51,29 +50,25 @@ public class TemplateNameServiceImpl extends BaseServiceImpl<TemplateNameForm> i
      */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Result<TemplateNameForm> create(Object object) {
-		Result<TemplateNameForm> result = new Result<>();
+    public TemplateNameForm create(Object object) {
 		TemplateNameForm templateNameForm = (TemplateNameForm) object;
 		ExtTemplateName extTemplateName = templateNameForm.getExtTemplateName();
 		List<ExtTemplateNameDetail> extTemplateNameDetailList = templateNameForm.getExtTemplateNameDetailList();
 		// 1、执行保存方法
-		int i = templateNameMapper.insert(extTemplateName);
-		if(0 < i){
+		boolean saveFlag = this.save(extTemplateName);
+		if(saveFlag){
 			for(ExtTemplateNameDetail extTemplateNameDetail : extTemplateNameDetailList){
 				extTemplateNameDetail.setTemplateMainIdStr(extTemplateName.getTemplateMainIdStr());
 			}
 			List<TemplateNameDetail> templateNameDetailList = ModelTransformUtils.exchangeClassList(extTemplateNameDetailList,TemplateNameDetail.class);
-			i = templateNameDetailMapper.insertList(templateNameDetailList);
+			int i = TemplateNameDetailService.saveBatch(templateNameDetailList);
 			if(0 >= i){
 				throw new BusinessException("明细行保存失败");
 			}
-			result.setText("保存成功");
-			result.setT(templateNameForm);
 		}else{
-			result.setText("主表保存失败");
-			result.setStatus(ErrorConstant.FAIL);		
+			throw new BusinessException("明细行保存失败");
 		}
-		return result;
+		return templateNameForm;
     }
 	
 
@@ -86,34 +81,30 @@ public class TemplateNameServiceImpl extends BaseServiceImpl<TemplateNameForm> i
      */
     @Override
 	@Transactional(rollbackFor = Exception.class)
-    public Result<TemplateNameForm> delete(Object object) {
-		Result<TemplateNameForm> result = new Result<>();
+    public TemplateNameForm delete(Object object) {
 		ExtTemplateName extTemplateName = (ExtTemplateName) object;
 		TemplateNameForm templateNameForm = new TemplateNameForm();
 		// 1、删除主表
-		Example example = new Example(TemplateName.class);
-		example.createCriteria().andIn(TemplateNameConstants.MAIN_ID_STR,extTemplateName.getIdList());
-		int i = templateNameMapper.deleteByExample(example);
-		int count = templateNameMapper.selectCountByExample(example);
-        if (count != extTemplateName.getIdList().size()){
-            return ErrorConstant.getErrorResult(ErrorConstant.DATA_NOT_EXISTS, "数据已被更新，请刷新！");
-        }
-		if(0 < i){
+		QueryWrapper<TemplateName> queryWrapper = new QueryWrapper<>();
+		queryWrapper.lambda().in(TemplateName::getTemplateMainIdStr, extTemplateName.getIdList());
+		int count = this.count(queryWrapper);
+		if (count != extTemplateName.getIdList().size()){
+			throw new BusinessException("数据已被更新，请刷新！", ErrorConstant.DATA_NOT_EXISTS);
+		}
+		boolean removeFlag = this.removeByIds(extTemplateName.getIdList());
+		if(removeFlag){
 			//2、删除明细表
-			example = new Example(TemplateNameDetail.class);
-			example.createCriteria().andIn(TemplateNameConstants.MAIN_ID_STR,extTemplateName.getIdList());
-			i = templateNameDetailMapper.deleteByExample(example);
+			QueryWrapper<TemplateNameDetail> detailQueryWrapper = new QueryWrapper<>();
+			detailQueryWrapper.lambda().in(TemplateNameDetail::getTemplateMainIdStr, extTemplateName.getIdList());
+			int i = TemplateNameDetailService.remove(detailQueryWrapper);
 			if(0 >= i){
 				throw new BusinessException("明细行删除失败");
 			}
 			templateNameForm.setExtTemplateName(extTemplateName);
-			result.setText("删除成功");
-			result.setT(templateNameForm);
-		}else{
-			result.setText("删除失败");
-			result.setStatus(ErrorConstant.FAIL);		
+		}else {
+			throw new BusinessException("明细行删除失败");
 		}
-		return result;
+		return templateNameForm;
     }
 
     /**
@@ -124,25 +115,20 @@ public class TemplateNameServiceImpl extends BaseServiceImpl<TemplateNameForm> i
      */
     @Override
 	@Transactional(rollbackFor = Exception.class)
-    public Result<TemplateNameForm> update(Object object) {
-		Result<TemplateNameForm> result = new Result<>();
+    public TemplateNameForm update(Object object) {
 		TemplateNameForm templateNameForm = (TemplateNameForm) object;
 		ExtTemplateName extTemplateName = templateNameForm.getExtTemplateName();
-		TemplateName templateName = templateNameMapper.selectByPrimaryKey(extTemplateName.getTemplateMainIdStr());
+		TemplateName templateName = this.getById(extTemplateName.getTemplateMainIdStr());
 		if(null == templateName){
-			return ErrorConstant.getErrorResult(ErrorConstant.DATA_NOT_EXISTS,"该数据不存在");
+			throw new BusinessException("数据已被更新，请刷新！", ErrorConstant.DATA_NOT_EXISTS);
 		}
 		// 其他判断
 		// 1、执行修改方法
-		int i = templateNameMapper.updateByPrimaryKeySelective(extTemplateName);
-		if(0 < i){
-			result.setText("修改成功");
-			result.setT(templateNameForm);
-		}else{
-			result.setText("修改失败");
-			result.setStatus(ErrorConstant.FAIL);		
+		boolean updateFlag = this.updateById(extTemplateName);
+		if(!updateFlag){
+			throw new BusinessException("修改失败", ErrorConstant.FAIL);
 		}
-		return result;
+		return templateNameForm;
     }
 
     /**
@@ -153,18 +139,17 @@ public class TemplateNameServiceImpl extends BaseServiceImpl<TemplateNameForm> i
      * @return
      */
     @Override
-    public Result<TemplateNameForm> get(Object object) {   
-		Result<TemplateNameForm> result = new Result<>();
+    public TemplateNameForm get(Object object) {
 		ExtTemplateName extTemplateName = (ExtTemplateName) object;
 		//1、查询主表
-		TemplateName templateName = templateNameMapper.selectByPrimaryKey(extTemplateName.getTemplateMainIdStr());
+		TemplateName templateName = this.getById(extTemplateName.getTemplateMainIdStr());
 		if(null == templateName){
-			return ErrorConstant.getErrorResult(ErrorConstant.DATA_NOT_EXISTS,"该数据不存在");
+			throw new BusinessException("数据已被更新，请刷新！", ErrorConstant.DATA_NOT_EXISTS);
 		}
 		//2、查询明细表
-		Example example = new Example(TemplateNameDetail.class);
-		example.createCriteria().andEqualTo(TemplateNameConstants.MAIN_ID_STR,templateName.getTemplateMainIdStr());
-		List<TemplateNameDetail> templateNameDetailList = templateNameDetailMapper.selectByExample(example);
+		QueryWrapper<TemplateNameDetail> detailQueryWrapper = new QueryWrapper<>();
+		detailQueryWrapper.lambda().eq(TemplateNameDetail::getTemplateMainIdStr, extTemplateName.getTemplateMainIdStr());
+		List<TemplateNameDetail> templateNameDetailList = TemplateNameDetailService.list(detailQueryWrapper);
 		if(CollectionUtils.isEmpty(templateNameDetailList)){
 			return ErrorConstant.getErrorResult(ErrorConstant.DATA_NOT_EXISTS,"该数据明细不存在");
 		}
@@ -173,22 +158,6 @@ public class TemplateNameServiceImpl extends BaseServiceImpl<TemplateNameForm> i
 		TemplateNameForm templateNameForm = new TemplateNameForm();
 		templateNameForm.setExtTemplateName(extTemplateName);
 		templateNameForm.setExtTemplateNameDetailList(extTemplateNameDetailList);
-		result.setT(templateNameForm);
-		return result;
+		return TemplateNameForm;
     }
-	
-	/**
-     * 根据条件查询
-     * @param object Example
-     * @return
-     */
-	 @Override
-    public Result<List<ExtTemplateName>> listByCondition(Object object) {
-		Result<List<ExtTemplateName>> result = new Result<>();
-		Example example = (Example)object;
-		List<TemplateName> templateNameList = templateNameMapper.selectByExample(example);
-		List<ExtTemplateName>extTemplateNameList =  ModelTransformUtils.exchangeClassList(templateNameList, ExtTemplateName.class);
-		result.setT(extTemplateNameList);
-		return result;
-	}
 }

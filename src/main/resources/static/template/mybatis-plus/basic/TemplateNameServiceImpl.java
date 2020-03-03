@@ -69,7 +69,7 @@ public class TemplateNameServiceImpl extends BasePlusServiceImpl<TemplateNameMap
     public ExtTemplateName delete(ExtTemplateName extTemplateName) {
         QueryWrapper<TemplateName> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().in(TemplateName::getTemplateMainIdStr, extTemplateName.getIdList());
-        Integer count = templateNameMapper.selectCount(queryWrapper);
+        int count = this.count(queryWrapper);
         if (count != extTemplateName.getIdList().size()){
             throw new BusinessException("数据已被更新，请刷新！", ErrorConstant.DATA_NOT_EXISTS);
         }
