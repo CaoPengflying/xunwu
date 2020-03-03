@@ -1,7 +1,6 @@
 package com.cpf.xunwu;
 
 import com.cpf.xunwu.entity.User;
-import com.cpf.xunwu.service.TranscationP;
 import com.cpf.xunwu.service.UserService;
 import org.junit.Test;
 
