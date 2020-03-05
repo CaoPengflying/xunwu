@@ -50,8 +50,4 @@ public class GenerateTemplateModelServiceTest extends XunwuApplicationTests {
         generateTemplateModelService.generateTemplateModel(generateTemplateModelDto);
     }
 
-    @Test
-    public void generateXml() {
-        generateTemplateModelService.generateXml();
-    }
 }

@@ -49,6 +49,7 @@ dependencies {
     compile 'org.elasticsearch.client:elasticsearch-rest-high-level-client:7.3.2'
     // https://mvnrepository.com/artifact/com.alibaba/fastjson
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
+    compile fileTree(dir:'libs',include:['*.jar'])
 
 
     compile(
