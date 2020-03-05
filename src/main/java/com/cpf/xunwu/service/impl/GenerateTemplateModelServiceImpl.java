@@ -127,7 +127,11 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
         if (StringUtils.isEmpty(generateTemplateModelDto.getEntityName())) {
             generateTemplateModelDto.setEntityName(underline2Camel(generateTemplateModelDto.getTableName()).substring(0, 1).toUpperCase() + underline2Camel(generateTemplateModelDto.getTableName()).substring(1));
         }
-        generateTemplateModelDto.setDatabase(generateTemplateModelDto.getProjectName() + "_" + generateTemplateModelDto.getDatabase());
+        if (generateTemplateModelDto.getProjectName().equals(GenerateTemplateModelConstants.MCLON_PROJECT_NAME)){
+            generateTemplateModelDto.setDatabase(GenerateTemplateModelConstants.MCLON_TABLE_PRE + "_" + generateTemplateModelDto.getDatabase());
+        }else {
+            generateTemplateModelDto.setDatabase(generateTemplateModelDto.getProjectName() + "_" + generateTemplateModelDto.getDatabase());
+        }
     }
 
     /**
