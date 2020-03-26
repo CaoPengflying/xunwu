@@ -22,6 +22,7 @@ public class HouseDetailTest extends XunwuApplicationTests {
         Page<HouseDetail> page = new Page<>(1,20);
         Page<HouseDetail> page1 = houseDetailService.page(page);
         List<HouseDetail> records = page1.getRecords();
+        System.out.println(page1.getTotal());
         System.out.println(records);
 //        HouseDetail byId = houseDetailService.getById(21);
 //        System.out.println(byId);
