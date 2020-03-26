@@ -555,7 +555,7 @@ public class GenerateTemplateModelServiceImpl implements GenerateTemplateModelSe
             String url = String.format("jdbc:mysql://%s:%s/%s", entity.getHost(), entity.getPort(), entity.getDatabase());
             Connection conn = DriverManager.getConnection(url, entity.getUsername(), entity.getPassword());
             String strsql = "SELECT COLUMN_NAME, DATA_TYPE, COLUMN_KEY, COLUMN_COMMENT  FROM INFORMATION_SCHEMA.COLUMNS " +
-                    "WHERE TABLE_SCHEMA = '" + entity.getDatabase() + "' AND TABLE_NAME = '" + entity.getTableName() + "'"; //读一行记录;
+                    "WHERE TABLE_SCHEMA = '" + entity.getDatabase() + "' AND TABLE_NAME = '" + entity.getTableName() + "'"+" order By ORDINAL_POSITION"; //读一行记录;
             PreparedStatement pstmt = conn.prepareStatement(strsql);
             ResultSet result = pstmt.executeQuery();
             while (result.next()) {
