@@ -15,7 +15,7 @@ public interface TemplateNameConstants {
     /**
      * 主键id名
      */
-    String MAIN_ID_STR = "TemplateMainIdStr";
+    String MAIN_ID_STR = "templateMainIdStr";
     /**
      * 单据类型
      */
