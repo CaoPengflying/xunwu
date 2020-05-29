@@ -16,7 +16,7 @@ public class GenerateUtil {
 
     public static void main(String[] args) throws Exception {
 
-        generateEntity("47.98.128.180", "3306", "xunwu", "root", "root123456",
+        generateEntity("rm-bp1lx35997eliful6o.mysql.rds.aliyuncs.com", "3306", "mkl_order", "mkl_test", "4BeLdVeRBY",
 //                "house",
 //                "id",
 //                "House", "com.cpf.xunwu.entity",
@@ -38,12 +38,12 @@ public class GenerateUtil {
 //                                "support_address",
 //                "id",
 //                "SupportAddress", "com.cpf.xunwu.entity",
-                                "user",
-                "id",
-                "User", "com.cpf.xunwu.entity",
+                                "pos_order",
+                "orderId",
+                "PosOrder", "com.cpf.xunwu.entity",
                 "E:\\IdeaWorkSpace\\xunwu/src/main/java/com\\cpf\\xunwu\\entity/");
-        GenerateMapper.generate("User","E:\\IdeaWorkSpace\\xunwu/src/main/java/com\\cpf\\xunwu\\mapper/");
-        GenerateService.generate("User","E:\\IdeaWorkSpace\\xunwu/src/main/java/com\\cpf\\xunwu\\service/");
+        GenerateMapper.generate("PosOrder","E:\\IdeaWorkSpace\\xunwu/src/main/java/com\\cpf\\xunwu\\mclon\\mapper/");
+        GenerateService.generate("PosOrder","E:\\IdeaWorkSpace\\xunwu/src/main/java/com\\cpf\\xunwu\\mclon\\service/");
 
     }
 
