@@ -14,17 +14,6 @@ spring:
   thymeleaf:
     cache: false
 
-mclon:
-  datasource:
-    hikari:
-      maximum-pool-size: 15
-      max-lifetime: 180000
-      idle-timeout: 60000
-      connection-timeout: 20000
-      minimum-idle: 5
-    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.mysql.jdbc.Driver
-
   servlet:
     multipart:
       enabled: true

@@ -1,0 +1,3 @@
+## 创建索引
+POST {{baseUrl}}/resultUnion
+Content-Type: application/json
