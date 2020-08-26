@@ -6,11 +6,11 @@ spring:
       idle-timeout: 60000
       connection-timeout: 20000
       minimum-idle: 5
-    url: jdbc:mysql://47.98.128.180:3306/xunwu?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/xunwu?useUnicode=true&characterEncoding=utf-8
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: root0808
+    password: root
   thymeleaf:
     cache: false
 
